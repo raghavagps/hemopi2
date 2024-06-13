@@ -38,7 +38,8 @@ Standalone version of HemoPI2.0 is written in python3 and the following librarie
 ```
 # Important Note
 
-- Due to large size of the model file, we have compressed model. 
+- Due to large size of the model file, we have compressed model directory and uploaded on our webserver. https://webs.iiitd.edu.in/raghava/hemopi2/download.html
+- Download this zip file 
 - It is crucial to unzip the file before attempting to use the code or model. The compressed file must be extracted to its original form for the code to function properly.
 
 
