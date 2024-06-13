@@ -93,10 +93,10 @@ options:
 **Output File**: Program will save result in CSV format, in case user do not provide output file name, it will be stored in outfile.csv.
 
 **Jobs**:  In this program, two models have been incorporated;  
-1) Prediction for predicting given input peptide sequence as hemolytic and non-hemolytic peptide
+1) Prediction: Prediction for predicting given input peptide sequence as hemolytic and non-hemolytic peptide
 2) Protein Scanning: for the prediction of hemolytic regions in a protein sequence.
 3) Design: generates mutant peptides with a single amino acid or dipeptide at particulal position provided by user and predict their hemolytic activity
-4) Design all possible mutants predict their hemolytic activity
+4) Design all possible mutants: Design all possible mutants predict their hemolytic activity
 
 **Position**: User can provide position at which he/she wants insert any single amino acid or dipeptide for creating mutation. This option is available for only Design module.
 
@@ -166,10 +166,11 @@ options:
 **Threshold**: User should provide threshold between 0 and 1, please note score is proportional to hemolytic potential of peptide.
 
 **Jobs**:  In this program, two models have been incorporated;  
-1) Prediction for predicting given input peptide sequence as hemolytic and non-hemolytic peptide.
+1) Prediction: Prediction for predicting given input peptide sequence as hemolytic and non-hemolytic peptide.
 2) Protein Scanning: for the prediction of hemolytic regions in a protein sequence.
 3) Design: generates mutant peptides with a single amino acid or dipeptide at particulal position provided by user and predict their hemolytic activity
-4) Design all possible mutants predict their hemolytic activity 5) Motif Scanning: This job facilitates users in scanning or mapping hemolytic motifs within the query sequence using MERCI. 
+4) Design all possible mutants: Design all possible mutants predict their hemolytic activity
+5) Motif Scanning: This job facilitates users in scanning or mapping hemolytic motifs within the query sequence using MERCI. 
 
 **Models**:  In this program, four models have been incorporated;  
 i) Model1 for predicting given input peptide sequence as hemolytic and non-hemolytic peptide using Random Forest (RF) algorithm based on various composition based features using Pfeature tool of the peptide; 
