@@ -42,10 +42,10 @@ Standalone version of HemoPI2.0 is written in python3 and the following librarie
 - It is crucial to unzip the file before attempting to use the code or model. The compressed file must be extracted to its original form for the code to function properly.
 
 
-**Regression**
+# Regression
 Predicts the Hazardous Concentration (HC50) or Half Maximum Effective Concentration (EC50) in μM. This indicates the concentration at which 50% of red blood cells (RBCs) are lysed. This model operates on the Random Forest Regressor (RFR) algorithm. 
 
-*Minimum USAGE*
+**Minimum USAGE**
 To know about the available option for the standalone, type the following command: 
 ```
 hemopi2_regrssion.py -h
@@ -102,10 +102,10 @@ options:
 
 **Working Directory**: Location for writing results
 
-**Classification**
+# Classification
 Determines whether peptides are hemolytic or non-hemolytic based on their primary sequence. We have employed machine learning models and protein language models. The provided options include RF and ESM2-t6 models, as well as their hybrids with MERCI. You can select your preferred model for prediction. By default, this use the Hybrid1 (ESM2-t6+MERCI) approach, which has demonstrated best performance on our evaluation on independent dataset as well as runtime efficient.
 
-*Minimum USAGE*
+**Minimum USAGE**
 To know about the available option for the standalone, type the following command: 
 ```
 hemopi2_classification.py -h
