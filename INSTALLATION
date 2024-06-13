@@ -1,0 +1,47 @@
+1. Pre-requisite
+====================
+To run this program user should have the following libraries
+
+1. scikit-learn 
+To set the version use:
+
+!pip install scikit-learn==1.3.1
+
+2. PyTorch: PyTorch is an open-source machine learning library. You can install it using pip (Python’s package installer). Open your terminal and type:
+!pip install torch
+
+
+3. Transformers: The Transformers library provides state-of-the-art machine learning models like ESM. Install it with:
+!pip install transformers
+
+4. ESM: ESM (Evolutionary Scale Modeling) is a library for protein sequence modeling.
+
+!pip install git+https://github.com/facebookresearch/esm.git
+
+
+
+2. Download Site
+====================
+https://webs.iiitd.edu.in/raghava/hemopi2/stand.html
+
+https://github.com/raghavagps/hemopi2
+
+3. Unzip/Untar
+
+4. Change dir to hemopi2
+
+
+3.  Usability 
+========================
+
+1. For Regression
+
+python3 hemopi2_regression.py -h
+
+2. For Classification 
+
+python3 hemopi2_classification.py -h
+
+
+
+
