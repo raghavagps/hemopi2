@@ -520,10 +520,10 @@ if Job == 1:
             df11 = df11
             print(df11)
         df11.to_csv(f"{wd}/{result_filename}", index=None)
-        #os.remove(f'{wd}/out_len')
-        #os.remove(f'{wd}/out2')
-        #os.remove(f'{wd}/out4')
-        #os.remove(f'{wd}/Sequence_1')
+        os.remove(f'{wd}/out_len')
+        os.remove(f'{wd}/out2')
+        os.remove(f'{wd}/out4')
+        os.remove(f'{wd}/Sequence_1')
 
         
 
@@ -565,17 +565,17 @@ if Job == 1:
         df12.to_csv(f"{wd}/{result_filename}", index=None)
 
         # Clean up temporary files used by Model 2
-        #os.remove(f'{wd}/final_output')
-        #os.remove(f'{wd}/merci_hybrid_p.csv')
-        #os.remove(f'{wd}/merci_hybrid_n.csv')
-        #os.remove(f'{wd}/merci_output_p.csv')
-        #os.remove(f'{wd}/merci_output_n.csv')
-        #os.remove(f'{wd}/merci_p.txt')
-        #os.remove(f'{wd}/merci_n.txt')
-        #os.remove(f'{wd}/Sequence_1')
-        #os.remove(f'{wd}/out_len')
-        #os.remove(f'{wd}/out2')
-        # os.remove(f'{wd}/out4')
+        os.remove(f'{wd}/final_output')
+        os.remove(f'{wd}/merci_hybrid_p.csv')
+        os.remove(f'{wd}/merci_hybrid_n.csv')
+        os.remove(f'{wd}/merci_output_p.csv')
+        os.remove(f'{wd}/merci_output_n.csv')
+        os.remove(f'{wd}/merci_p.txt')
+        os.remove(f'{wd}/merci_n.txt')
+        os.remove(f'{wd}/Sequence_1')
+        os.remove(f'{wd}/out_len')
+        os.remove(f'{wd}/out2')
+        os.remove(f'{wd}/out4')
 
     elif Model == 3:
         print('\n======= Thanks for using Prediction module of HemoPI2.0. Your results will be stored in file :'f"{wd}/{result_filename}"' =====\n')
@@ -602,8 +602,8 @@ if Job == 1:
         df13.to_csv(f"{wd}/{result_filename}", index=None)
 
         # Clean up temporary files used by Model 3
-        # os.remove('Sequence_1')
-        # os.remove('out_len')
+        os.remove(f'{wd}/Sequence_1')
+        os.remove(f'{wd}/out_len')
         
         
 
@@ -646,15 +646,15 @@ if Job == 1:
         df14.to_csv(f"{wd}/{result_filename}", index=None)
 
         # Clean up temporary files used by Model 4
-        #os.remove('final_output')
-        #os.remove('merci_hybrid_p.csv')
-        #os.remove('merci_hybrid_n.csv')
-        #os.remove('merci_output_p.csv')
-        # os.remove('merci_output_n.csv')
-        # os.remove('merci_p.txt')
-        # os.remove('merci_n.txt')
-        # os.remove('Sequence_1')
-        # os.remove('out_len')
+        os.remove(f'{wd}/final_output')
+        os.remove(f'{wd}/merci_hybrid_p.csv')
+        os.remove(f'{wd}/merci_hybrid_n.csv')
+        os.remove(f'{wd}/merci_output_p.csv')
+        os.remove(f'{wd}/merci_output_n.csv')
+        os.remove(f'{wd}/merci_p.txt')
+        os.remove(f'{wd}/merci_n.txt')
+        os.remove(f'{wd}/Sequence_1')
+        os.remove(f'{wd}/out_len')
         
 #==================#################===================== Protein Scanning Module start from here ==============###############==============
 if Job == 2:
@@ -684,9 +684,10 @@ if Job == 2:
         df31.to_csv(f"{wd}/{result_filename}", index=None)
 
         # Clean up temporary files used by Model 1
-        # os.remove('out_len')
-        # os.remove('out2')
-        # os.remove('out4')
+        os.remove(f'{wd}/out_len')
+        os.remove(f'{wd}/out2')
+        os.remove(f'{wd}/out4')
+        os.remove(f'{wd}/Sequence_1')
 
     elif Model == 2 :
         
@@ -731,17 +732,18 @@ if Job == 2:
         df32 = round(df32, 3)
         df32.to_csv(f"{wd}/{result_filename}", index=None)
 
-       ## Clean up temporary files used by Model 2
-        # os.remove('final_output')
-        # os.remove('merci_hybrid_p.csv')
-        # os.remove('merci_hybrid_n.csv')
-        # os.remove('merci_output_p.csv')
-        # os.remove('merci_output_n.csv')
-        # os.remove('merci_p.txt')
-        # os.remove('merci_n.txt')
-        # os.remove('Sequence_1')
-        # os.remove('out_len')
-        # os.remove('out2')
+        # Clean up temporary files used by Model 4
+        os.remove(f'{wd}/final_output')
+        os.remove(f'{wd}/merci_hybrid_p.csv')
+        os.remove(f'{wd}/merci_hybrid_n.csv')
+        os.remove(f'{wd}/merci_output_p.csv')
+        os.remove(f'{wd}/merci_output_n.csv')
+        os.remove(f'{wd}/merci_p.txt')
+        os.remove(f'{wd}/merci_n.txt')
+        os.remove(f'{wd}/Sequence_1')
+        os.remove(f'{wd}/out_len')
+        os.remove(f'{wd}/out4')
+        os.remove(f'{wd}/out2')
 
     elif Model == 3 :
         print('\n======= Thanks for using Protein Scan module of HemoPI2.0. Your results will be stored in file :'f"{wd}/{result_filename}"' =====\n')
@@ -774,9 +776,8 @@ if Job == 2:
         df33.to_csv(f"{wd}/{result_filename}", index=None)
 
         # Clean up temporary files used by Model 3
-        #os.remove('Sequence_1')
-        #os.remove('out_len')
-        #os.remove('out4')
+        os.remove(f'{wd}/Sequence_1')
+        os.remove(f'{wd}/out_len')
 
     elif Model == 4 :
         print('\n======= Thanks for using Protein Scan module of HemoPI2.0. Your results will be stored in file :'f"{wd}/{result_filename}"' =====\n')
@@ -825,15 +826,15 @@ if Job == 2:
         df43.to_csv(f"{wd}/{result_filename}", index=None)
 
         # Clean up temporary files used by Model 4
-        #os.remove('final_output')
-        # os.remove('merci_hybrid_p.csv')
-        # os.remove('merci_hybrid_n.csv')
-        # os.remove('merci_output_p.csv')
-        # os.remove('merci_output_n.csv')
-        # os.remove('merci_p.txt')
-        # os.remove('merci_n.txt')
-        # os.remove('Sequence_1')
-        # os.remove('out_len')
+        os.remove(f'{wd}/final_output')
+        os.remove(f'{wd}/merci_hybrid_p.csv')
+        os.remove(f'{wd}/merci_hybrid_n.csv')
+        os.remove(f'{wd}/merci_output_p.csv')
+        os.remove(f'{wd}/merci_output_n.csv')
+        os.remove(f'{wd}/merci_p.txt')
+        os.remove(f'{wd}/merci_n.txt')
+        os.remove(f'{wd}/Sequence_1')
+        os.remove(f'{wd}/out_len')
         
 #======================###############=== Design Model Start from Here =========#########################=================
 if Job == 3:
@@ -865,12 +866,14 @@ if Job == 3:
             df21 = df21
             print(df21)
         df21.to_csv(f"{wd}/{result_filename}", index=None)
-        #os.remove('out_len')
-        # os.remove('out_len_mut')
-        # os.remove('out2')
-        # os.remove('out22')
-        # os.remove('out3')
-        # os.remove('out33')
+        #Clean up temporary files used by Model 1
+        os.remove(f'{wd}/out_len')
+        os.remove(f'{wd}/out_len_mut')
+        os.remove(f'{wd}/out2')
+        os.remove(f'{wd}/out22')
+        os.remove(f'{wd}/out3')
+        os.remove(f'{wd}/out33')
+        os.remove(f'{wd}/Sequence_1')
     
     elif Model == 2:
         print('\n======= Thanks for using Design module of HemoPI2.0. Your results will be stored in file :'f"{wd}/{result_filename}"' =====\n')
@@ -925,6 +928,10 @@ if Job == 3:
         df222.rename(columns={'Seq': 'Mutant Sequence'}, inplace=True)
         
         df223 = pd.concat([df221, df222], axis=1)
+        df223 = df223.iloc[:, [i for i in range(df223.shape[1]) if i != 6]]
+        df223_part1 = df223.iloc[:, :7]
+        df223_part2 = df223.iloc[:, 7:]
+        df223 = pd.concat([df223_part1, result_df["Position"], df223_part2], axis=1)
 
 
 
@@ -936,21 +943,21 @@ if Job == 3:
         df223 = round(df223, 3)
         df223.to_csv(f"{wd}/{result_filename}", index=None)
 
-        # Clean up temporary files used by Model 2
-        # os.remove('final_output')
-        # os.remove('merci_hybrid_p.csv')
-        # os.remove('merci_hybrid_n.csv')
-        # os.remove('merci_output_p.csv')
-        # os.remove('merci_output_n.csv')
-        # os.remove('merci_p.txt')
-        # os.remove('merci_n.txt')
-        # os.remove('Sequence_1')
-        # os.remove('out_len')
-        # os.remove('out_len_mut')
-        # os.remove('out22')
-        # os.remove('out33')
-        # os.remove('out2')
-        # os.remove('out3')
+        #Clean up temporary files used by Model 2
+        os.remove(f'{wd}/final_output')
+        os.remove(f'{wd}/merci_hybrid_p.csv')
+        os.remove(f'{wd}/merci_hybrid_n.csv')
+        os.remove(f'{wd}/merci_output_p.csv')
+        os.remove(f'{wd}/merci_output_n.csv')
+        os.remove(f'{wd}/merci_p.txt')
+        os.remove(f'{wd}/merci_n.txt')
+        os.remove(f'{wd}/Sequence_1')
+        os.remove(f'{wd}/out_len')
+        os.remove(f'{wd}/out_len_mut')
+        os.remove(f'{wd}/out22')
+        os.remove(f'{wd}/out33')
+        os.remove(f'{wd}/out2')
+        os.remove(f'{wd}/out3')
 
     elif Model == 3:
         print('\n======= Thanks for using Design module of HemoPI2.0. Your results will be stored in file :'f"{wd}/{result_filename}"' =====\n')
@@ -989,10 +996,10 @@ if Job == 3:
             print(df23)
         df23.to_csv(f"{wd}/{result_filename}", index=None)
         # Clean up temporary files used by Model 3
-        # os.remove('out_len')
-        # os.remove('out_ori')
-        # os.remove('out_m')
-        # os.remove('Sequence_1')
+        os.remove(f'{wd}/out_len')
+        os.remove(f'{wd}/out_ori')
+        os.remove(f'{wd}/out_m')
+        os.remove(f'{wd}/Sequence_1')
 
     elif Model == 4:
         print('\n======= Thanks for using Design module of HemoPI2.0. Your results will be stored in file :'f"{wd}/{result_filename}"' =====\n')
@@ -1057,8 +1064,8 @@ if Job == 3:
         df243 = pd.concat([df241, df242], axis=1)
 
         # Split df243 into two parts: up to the 8th column and from the 9th column onwards
-        df243_part1 = df243.iloc[:, :8]
-        df243_part2 = df243.iloc[:, 8:]
+        df243_part1 = df243.iloc[:, :7]
+        df243_part2 = df243.iloc[:, 7:]
 
         # Concatenate the parts with the Position column from result_df
         df243 = pd.concat([df243_part1, result_df["Position"], df243_part2], axis=1)
@@ -1076,15 +1083,17 @@ if Job == 3:
         df243.to_csv(f"{wd}/{result_filename}", index=None)
 
         # Clean up temporary files used by Model 4
-        # os.remove('final_output')
-        # os.remove('merci_hybrid_p.csv')
-        # os.remove('merci_hybrid_n.csv')
-        # os.remove('merci_output_p.csv')
-        # os.remove('merci_output_n.csv')
-        # os.remove('merci_p.txt')
-        # os.remove('merci_n.txt')
-        # os.remove('Sequence_1')
-        # os.remove('out_len')
+        os.remove(f'{wd}/final_output')
+        os.remove(f'{wd}/merci_hybrid_p.csv')
+        os.remove(f'{wd}/merci_hybrid_n.csv')
+        os.remove(f'{wd}/merci_output_p.csv')
+        os.remove(f'{wd}/merci_output_n.csv')
+        os.remove(f'{wd}/merci_p.txt')
+        os.remove(f'{wd}/merci_n.txt')
+        os.remove(f'{wd}/Sequence_1')
+        os.remove(f'{wd}/out_len')
+        os.remove(f'{wd}/out_m')
+        os.remove(f'{wd}/out_ori')
     
 #======================###############=== Design all possibel Mutants Start from Here =========#########################=================
 if Job == 4:
@@ -1113,12 +1122,14 @@ if Job == 4:
             df21 = df21
             print(df21)
         df21.to_csv(f"{wd}/{result_filename}", index=None)
-        #os.remove('out_len')
-        # os.remove('out_len_mut')
-        # os.remove('out2')
-        # os.remove('out22')
-        # os.remove('out3')
-        # os.remove('out33')
+
+        # Clean up temporary files used by Model 2
+        os.remove(f'{wd}/out_len')
+        os.remove(f'{wd}/mut_seq')
+        os.remove(f'{wd}muts.csv')
+        os.remove(f'{wd}/out2')
+        os.remove(f'{wd}/out22')
+        os.remove(f'{wd}/Sequence_1')
     
     elif Model == 2:
         print('\n======= Thanks for using Design module of HemoPI2.0. Your results will be stored in file :'f"{wd}/{result_filename}"' =====\n')
@@ -1164,20 +1175,19 @@ if Job == 4:
         df223.to_csv(f"{wd}/{result_filename}", index=None)
 
         # Clean up temporary files used by Model 2
-        # os.remove('final_output')
-        # os.remove('merci_hybrid_p.csv')
-        # os.remove('merci_hybrid_n.csv')
-        # os.remove('merci_output_p.csv')
-        # os.remove('merci_output_n.csv')
-        # os.remove('merci_p.txt')
-        # os.remove('merci_n.txt')
-        # os.remove('Sequence_1')
-        # os.remove('out_len')
-        # os.remove('out_len_mut')
-        # os.remove('out22')
-        # os.remove('out33')
-        # os.remove('out2')
-        # os.remove('out3')
+        os.remove(f'{wd}/final_output')
+        os.remove(f'{wd}/merci_hybrid_p.csv')
+        os.remove(f'{wd}/merci_hybrid_n.csv')
+        os.remove(f'{wd}/merci_output_p.csv')
+        os.remove(f'{wd}/merci_output_n.csv')
+        os.remove(f'{wd}/merci_p.txt')
+        os.remove(f'{wd}/merci_n.txt')
+        os.remove(f'{wd}/Sequence_1')
+        os.remove(f'{wd}/out_len')
+        os.remove(f'{wd}/out22')
+        os.remove(f'{wd}/out2')
+        os.remove(f'{wd}/mut_seq')
+        os.remove(f'{wd}/muts.csv')
 
     elif Model == 3:
         print('\n======= Thanks for using Design module of HemoPI2.0. Your results will be stored in file :'f"{wd}/{result_filename}"' =====\n')
@@ -1211,10 +1221,10 @@ if Job == 4:
             print(df23)
         df23.to_csv(f"{wd}/{result_filename}", index=None)
         # Clean up temporary files used by Model 3
-        # os.remove('out_len')
-        # os.remove('out_ori')
-        # os.remove('out_m')
-        # os.remove('Sequence_1')
+        os.remove(f'{wd}/out_len')
+        os.remove(f'{wd}/out_ori')
+        os.remove(f'{wd}/Sequence_1')
+        os.remove(f'{wd}/muts.csv')
 
     elif Model == 4:
         print('\n======= Thanks for using Design module of HemoPI2.0. Your results will be stored in file :'f"{wd}/{result_filename}"' =====\n')
@@ -1262,15 +1272,17 @@ if Job == 4:
         df243.to_csv(f"{wd}/{result_filename}", index=None)
 
         # Clean up temporary files used by Model 4
-        # os.remove('final_output')
-        # os.remove('merci_hybrid_p.csv')
-        # os.remove('merci_hybrid_n.csv')
-        # os.remove('merci_output_p.csv')
-        # os.remove('merci_output_n.csv')
-        # os.remove('merci_p.txt')
-        # os.remove('merci_n.txt')
-        # os.remove('Sequence_1')
-        # os.remove('out_len')
+        os.remove(f'{wd}/final_output')
+        os.remove(f'{wd}/merci_hybrid_p.csv')
+        os.remove(f'{wd}/merci_hybrid_n.csv')
+        os.remove(f'{wd}/merci_output_p.csv')
+        os.remove(f'{wd}/merci_output_n.csv')
+        os.remove(f'{wd}/merci_p.txt')
+        os.remove(f'{wd}/merci_n.txt')
+        os.remove(f'{wd}/Sequence_1')
+        os.remove(f'{wd}/out_len')
+        os.remove(f'{wd}/muts.csv')
+        os.remove(f'{wd}/out_ori')
 
 
 #==================#################===================== Motif Scanning Module start from here ==============###############==============
@@ -1348,5 +1360,5 @@ if Job == 5:
     
     
 print("\n=========Process Completed. Have an awesome day ahead.=============\n")
-print('\n======= Thanks for using HemoPI2.0. Your results are stored in file :'f"{wd}/{result_filename}"' =====\n\n')
+print('\n======= Thanks for using HemoPI2.0. Your results are stored in file :'f"{wd}{result_filename}"' =====\n\n')
 print('Please cite: HemoPI2.0\n')
