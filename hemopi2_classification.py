@@ -1360,5 +1360,5 @@ if Job == 5:
     
     
 print("\n=========Process Completed. Have an awesome day ahead.=============\n")
-print('\n======= Thanks for using HemoPI2.0. Your results are stored in file :'f"{wd}{result_filename}"' =====\n\n')
+print('\n======= Thanks for using HemoPI2.0. Your results are stored in file :'f"{wd}/{result_filename}"' =====\n\n')
 print('Please cite: HemoPI2.0\n')
