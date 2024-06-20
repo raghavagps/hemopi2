@@ -215,4 +215,13 @@ User can install Hemopi2.0 via PIP also
 ```
 pip install hemopi2
 ```
+To know about the available option for the pip package, type the following command:
 
+For regression: 
+```
+hemopi2_regression -h
+```
+For classification: 
+```
+hemopi2_classification -h
+```
