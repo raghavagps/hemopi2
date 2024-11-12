@@ -1,0 +1,128 @@
+MERCI - Summary of options:
+ -p    all_positive.fasta
+ -n    all_negative.fasta
+ -k 	  100
+ -fp   5
+ -fn   0
+ -o    all_pos_motif_fp5.txt
+ -l    10000
+ -s    10000
+ -c    NONE
+ -g    0
+ -gl   1
+ -para 0
+
+
+Motifs:
+ C G E T
+ C G E T C
+ E T C
+ G E T
+ G E T C
+ T L L K K
+ T L L K K V
+ G G L F
+ G G L F S
+ G L F S
+ T L L K K V L
+ T L L K K V L K
+ I G G L F
+ I G G L F S
+ I I G G L
+ I I G G L F
+ I I G G L F S
+ T L L K K V L K A
+ A I H
+ H H I I
+ H H I I G
+ H H I I G G
+ H I I G G
+ R L I R
+ F I H H
+ H H I I G G L
+ H H I I G G L F
+ H H I I G G L F S
+ H I I G G L
+ H I I G G L F
+ H I I G G L F S
+ H R L I
+ H R L I R
+ I H H
+ I R R R
+ S A G K A
+ A G K A I
+ A G K A I H
+ F I H H I
+ F I H H I I
+ F I H H I I G
+ F I H H I I G G
+ F S A G
+ F S A G K
+ F S A G K A
+ F S L R K Y
+ G G L F S A
+ G G L F S A G
+ G G L F S A G K
+ G G L F S A G K A
+ G K A I H
+ G L F S A
+ G L F S A G
+ G L F S A G K
+ G L F S A G K A
+ H R L I R R
+ H R L I R R R
+ I F C
+ I H H I
+ I H H I I
+ I H H I I G
+ I H H I I G G
+ K A I H
+ K I F C
+ K V L K A A A K
+ L F S A
+ L F S A G
+ L F S A G K
+ L F S A G K A
+ L I R R
+ L I R R R
+ L L K L L
+ R L I R R
+ R L I R R R
+ T C N
+ T L L K K V L K A A
+ T L L K K V L K A A A
+ V L K A A A K
+ C N T
+ C N T P
+ C T R
+ F I H H I I G G L
+ F I H H I I G G L F
+ F I H H I I G G L F S
+ G G T
+ G G T C
+ H R L I R R R R
+ H R L I R R R R R
+ I G G L F S A
+ I G G L F S A G
+ I G G L F S A G K
+ I G G L F S A G K A
+ I H H I I G G L
+ I H H I I G G L F
+ I H H I I G G L F S
+ I I G G L F S A
+ I I G G L F S A G
+ I I G G L F S A G K
+ I I G G L F S A G K A
+ I R R R R
+ I R R R R R
+ K K V L K A A A K
+ L I R R R R
+ L I R R R R R
+ L K K V L K A A A K
+ L L K K V L K A A A K
+ L L S L L
+ N T P
+ P K I F
+ R L I R R R R
+ R L I R R R R R
+ T L L K K V L K A A A K

@@ -1,0 +1,1456 @@
+MERCI - Summary of options:
+ -p    all_positive.fasta
+ -n    all_negative.fasta
+ -k 	  500
+ -fp   10
+ -fn   0
+ -o    pos_motif_KOOLMAN-ROHM_fp10.txt
+ -l    10000
+ -s    10000
+ -c    KOOLMAN-ROHM
+ -g    0
+ -gl   1
+ -para 0
+
+
+Motifs:
+ aliphatic L aromatic neutral aliphatic
+ F L P aliphatic aliphatic A
+ F aliphatic P aliphatic aliphatic A
+ aromatic L P aliphatic aliphatic A
+ aromatic aliphatic P aliphatic aliphatic A
+ L aromatic neutral aliphatic aliphatic
+ L aromatic neutral aliphatic aliphatic basic
+ L aromatic neutral aliphatic aliphatic K
+ aliphatic aliphatic L aromatic neutral
+ aliphatic aliphatic L aromatic neutral aliphatic
+ G aliphatic L aliphatic K
+ aliphatic aliphatic aliphatic L aromatic neutral
+ aliphatic aliphatic aliphatic L aromatic neutral aliphatic
+ A G aliphatic aliphatic A
+ G aliphatic aliphatic A K
+ G aliphatic aliphatic aromatic neutral
+ G aliphatic aliphatic aromatic neutral aliphatic
+ aliphatic L aromatic neutral aliphatic aliphatic
+ aliphatic L aromatic neutral aliphatic aliphatic basic
+ aliphatic L aromatic neutral aliphatic aliphatic K
+ G aliphatic L aromatic neutral
+ G aliphatic L aromatic neutral aliphatic
+ G aliphatic aliphatic aromatic neutral aliphatic aliphatic
+ G aliphatic aliphatic aromatic neutral aliphatic aliphatic basic
+ G aliphatic aliphatic aromatic neutral aliphatic aliphatic K
+ aliphatic A G aliphatic aliphatic A
+ aliphatic G aliphatic L aromatic neutral
+ aliphatic G aliphatic L aromatic neutral aliphatic
+ aliphatic G aliphatic aliphatic aromatic neutral
+ aliphatic G aliphatic aliphatic aromatic neutral aliphatic
+ aliphatic aliphatic aliphatic aromatic neutral aliphatic aliphatic
+ aliphatic aliphatic aliphatic aromatic neutral aliphatic aliphatic basic
+ aliphatic aliphatic aliphatic aromatic neutral aliphatic aliphatic K
+ C G E T sulfur
+ C G E T C
+ C G acidic T sulfur
+ C G acidic T C
+ C aliphatic E T sulfur
+ C aliphatic E T C
+ C aliphatic acidic T sulfur
+ C aliphatic acidic T C
+ sulfur G E T sulfur
+ sulfur G E T C
+ sulfur G acidic T sulfur
+ sulfur G acidic T C
+ sulfur aliphatic E T sulfur
+ sulfur aliphatic E T C
+ sulfur aliphatic acidic T sulfur
+ sulfur aliphatic acidic T C
+ G aliphatic L aromatic neutral aliphatic aliphatic
+ G aliphatic L aromatic neutral aliphatic aliphatic basic
+ G aliphatic L aromatic neutral aliphatic aliphatic K
+ I aliphatic aliphatic G L
+ L P aliphatic aliphatic aliphatic G
+ aliphatic A G aliphatic A
+ aliphatic G aliphatic L aromatic neutral aliphatic aliphatic
+ aliphatic G aliphatic L aromatic neutral aliphatic aliphatic basic
+ aliphatic G aliphatic L aromatic neutral aliphatic aliphatic K
+ aliphatic G aliphatic aliphatic aromatic neutral aliphatic aliphatic
+ aliphatic G aliphatic aliphatic aromatic neutral aliphatic aliphatic basic
+ aliphatic G aliphatic aliphatic aromatic neutral aliphatic aliphatic K
+ aliphatic aliphatic L aromatic neutral aliphatic aliphatic
+ aliphatic aliphatic L aromatic neutral aliphatic aliphatic basic
+ aliphatic aliphatic L aromatic neutral aliphatic aliphatic K
+ aliphatic aliphatic aliphatic L aromatic neutral aliphatic aliphatic
+ aliphatic aliphatic aliphatic L aromatic neutral aliphatic aliphatic basic
+ aliphatic aliphatic aliphatic L aromatic neutral aliphatic aliphatic K
+ aliphatic aliphatic aliphatic aliphatic aromatic neutral aliphatic aliphatic
+ aliphatic aliphatic aliphatic aliphatic aromatic neutral aliphatic aliphatic basic
+ aliphatic aliphatic aliphatic aliphatic aromatic neutral aliphatic aliphatic K
+ P aliphatic aliphatic A G
+ L P aliphatic aliphatic aliphatic G aliphatic
+ aliphatic G aliphatic L F
+ aliphatic L F neutral aliphatic
+ aliphatic aliphatic A K aliphatic aliphatic L
+ aliphatic aliphatic A basic aliphatic aliphatic L
+ aliphatic aliphatic aliphatic A N
+ aliphatic aliphatic aliphatic aliphatic aliphatic aliphatic N
+ F L P aliphatic aliphatic aliphatic G
+ F aliphatic P aliphatic aliphatic aliphatic G
+ aromatic L P aliphatic aliphatic aliphatic G
+ aromatic aliphatic P aliphatic aliphatic aliphatic G
+ P aliphatic aliphatic aliphatic aliphatic aliphatic aliphatic aliphatic
+ G L aromatic neutral aliphatic
+ L aliphatic basic basic R
+ L F neutral aliphatic aliphatic
+ L P aliphatic aliphatic A aliphatic
+ L P aliphatic aliphatic A G
+ L P aliphatic aliphatic aliphatic G aliphatic aliphatic
+ aliphatic L aromatic S aliphatic
+ aliphatic aliphatic A K aliphatic A L
+ aliphatic aliphatic A basic aliphatic A L
+ aliphatic aliphatic aliphatic aliphatic A N
+ aliphatic aliphatic aliphatic aliphatic aliphatic A N
+ aliphatic P aliphatic aliphatic A G
+ aliphatic P aliphatic aliphatic aliphatic aliphatic aliphatic aliphatic aliphatic
+ F L P aliphatic aliphatic A aliphatic
+ F L P aliphatic aliphatic A G
+ F L P aliphatic aliphatic aliphatic G aliphatic
+ F aliphatic P aliphatic aliphatic A aliphatic
+ F aliphatic P aliphatic aliphatic A G
+ F aliphatic P aliphatic aliphatic aliphatic G aliphatic
+ aromatic L P aliphatic aliphatic A aliphatic
+ aromatic L P aliphatic aliphatic A G
+ aromatic L P aliphatic aliphatic aliphatic G aliphatic
+ aromatic aliphatic P aliphatic aliphatic A aliphatic
+ aromatic aliphatic P aliphatic aliphatic A G
+ aromatic aliphatic P aliphatic aliphatic aliphatic G aliphatic
+ T aliphatic aliphatic K K
+ T aliphatic aliphatic K K aliphatic
+ T aliphatic aliphatic basic K
+ T aliphatic aliphatic basic K aliphatic
+ neutral aliphatic L K K V aliphatic basic
+ neutral aliphatic L K K V aliphatic K
+ neutral aliphatic L basic K V aliphatic basic
+ neutral aliphatic L basic K V aliphatic K
+ neutral aliphatic aliphatic K K V aliphatic basic
+ neutral aliphatic aliphatic K K V aliphatic K
+ neutral aliphatic aliphatic basic K V aliphatic basic
+ neutral aliphatic aliphatic basic K V aliphatic K
+ A G aliphatic A aliphatic
+ A G aliphatic A A
+ A aliphatic A K aliphatic aliphatic L
+ A aliphatic A basic aliphatic aliphatic L
+ G L F neutral aliphatic
+ L F S aliphatic aliphatic
+ L aromatic S aliphatic aliphatic
+ L P aliphatic aliphatic A G aliphatic
+ L P aliphatic aliphatic A aliphatic aliphatic
+ L P aliphatic aliphatic aliphatic aliphatic aliphatic aliphatic aliphatic
+ aliphatic A G aliphatic A aliphatic
+ aliphatic A G aliphatic A A
+ aliphatic A aliphatic L A
+ aliphatic G L aromatic neutral
+ aliphatic G L aromatic neutral aliphatic
+ aliphatic G aliphatic aromatic neutral
+ aliphatic G aliphatic aromatic neutral aliphatic
+ aliphatic I basic R basic
+ aliphatic I basic basic basic basic
+ aliphatic L F S aliphatic
+ aliphatic aliphatic A G aliphatic A
+ aliphatic aliphatic A G aliphatic aliphatic aliphatic
+ aliphatic aliphatic G L aromatic
+ aliphatic aliphatic G L F
+ aliphatic aliphatic G aliphatic aromatic
+ aliphatic aliphatic G aliphatic F
+ aliphatic aliphatic V aliphatic A
+ aliphatic aliphatic aliphatic aromatic S
+ aliphatic aliphatic aliphatic aromatic S aliphatic
+ aliphatic P aliphatic aliphatic A G aliphatic
+ F L P aliphatic aliphatic A G aliphatic
+ F L P aliphatic aliphatic A aliphatic aliphatic
+ F L P aliphatic aliphatic aliphatic G aliphatic aliphatic
+ F L P aliphatic aliphatic aliphatic aliphatic aliphatic aliphatic aliphatic
+ F aliphatic P aliphatic aliphatic A G aliphatic
+ F aliphatic P aliphatic aliphatic A aliphatic aliphatic
+ F aliphatic P aliphatic aliphatic aliphatic G aliphatic aliphatic
+ F aliphatic P aliphatic aliphatic aliphatic aliphatic aliphatic aliphatic aliphatic
+ aromatic L P aliphatic aliphatic A G aliphatic
+ aromatic L P aliphatic aliphatic A aliphatic aliphatic
+ aromatic L P aliphatic aliphatic aliphatic G aliphatic aliphatic
+ aromatic L P aliphatic aliphatic aliphatic aliphatic aliphatic aliphatic aliphatic
+ aromatic aliphatic P aliphatic aliphatic A G aliphatic
+ aromatic aliphatic P aliphatic aliphatic A aliphatic aliphatic
+ aromatic aliphatic P aliphatic aliphatic aliphatic G aliphatic aliphatic
+ aromatic aliphatic P aliphatic aliphatic aliphatic aliphatic aliphatic aliphatic aliphatic
+ T L L K K
+ T L L K K aliphatic
+ T L L basic K
+ T L L basic K aliphatic
+ T L aliphatic K K
+ T L aliphatic K K aliphatic
+ T L aliphatic basic K
+ T L aliphatic basic K aliphatic
+ T aliphatic L K K
+ T aliphatic L K K aliphatic
+ T aliphatic L basic K
+ T aliphatic L basic K aliphatic
+ T aliphatic aliphatic K K V
+ T aliphatic aliphatic basic K V
+ neutral aliphatic L K K V L basic
+ neutral aliphatic L K K V L K
+ neutral aliphatic L K basic V L basic
+ neutral aliphatic L K basic V L K
+ neutral aliphatic L basic K V L basic
+ neutral aliphatic L basic K V L K
+ neutral aliphatic L basic basic V L basic
+ neutral aliphatic L basic basic V L K
+ neutral aliphatic aliphatic K K V L basic
+ neutral aliphatic aliphatic K K V L K
+ neutral aliphatic aliphatic K basic V L basic
+ neutral aliphatic aliphatic K basic V L K
+ neutral aliphatic aliphatic basic K V L basic
+ neutral aliphatic aliphatic basic K V L K
+ neutral aliphatic aliphatic basic basic V L basic
+ neutral aliphatic aliphatic basic basic V L K
+ K aliphatic aliphatic basic A aliphatic aliphatic basic
+ K aliphatic aliphatic basic A aliphatic aliphatic K
+ P aliphatic aliphatic A G aliphatic
+ P aliphatic aliphatic aliphatic G aliphatic aliphatic aliphatic
+ A aliphatic A K aliphatic A L
+ A aliphatic A basic aliphatic A L
+ G L F neutral aliphatic aliphatic
+ G L F neutral aliphatic aliphatic basic
+ G L F neutral aliphatic aliphatic K
+ G L aromatic S aliphatic
+ G L aromatic neutral aliphatic aliphatic
+ G L aromatic neutral aliphatic aliphatic basic
+ G L aromatic neutral aliphatic aliphatic K
+ G aliphatic L aliphatic K aliphatic
+ G aliphatic aliphatic aromatic S
+ G aliphatic aliphatic aromatic S aliphatic
+ G aliphatic aliphatic aromatic S aliphatic aliphatic
+ G aliphatic aliphatic aromatic S aliphatic aliphatic basic
+ G aliphatic aliphatic aromatic S aliphatic aliphatic K
+ G aliphatic F neutral aliphatic aliphatic basic
+ G aliphatic F neutral aliphatic aliphatic K
+ G aliphatic aromatic neutral aliphatic aliphatic basic
+ G aliphatic aromatic neutral aliphatic aliphatic K
+ I aliphatic G G L
+ I aliphatic aliphatic L aromatic
+ I aliphatic aliphatic L F
+ I aliphatic aliphatic aliphatic aromatic
+ I aliphatic aliphatic aliphatic F
+ L I basic basic basic basic
+ L I basic basic basic R
+ L aliphatic K aliphatic aliphatic L basic
+ L aliphatic K aliphatic aliphatic L K
+ L aliphatic basic aliphatic aliphatic L basic
+ L aliphatic basic aliphatic aliphatic L K
+ L F S aliphatic G
+ L F neutral aliphatic G
+ L F neutral aliphatic aliphatic basic
+ L F neutral aliphatic aliphatic K
+ L aromatic S aliphatic G
+ L aromatic neutral aliphatic G
+ L P aliphatic aliphatic A G aliphatic aliphatic
+ L P aliphatic aliphatic A aliphatic aliphatic aliphatic
+ L P aliphatic aliphatic aliphatic aliphatic aliphatic aliphatic A
+ aliphatic G L F neutral
+ aliphatic G L F neutral aliphatic
+ aliphatic G L aromatic S
+ aliphatic G L aromatic S aliphatic
+ aliphatic G aliphatic F neutral
+ aliphatic G aliphatic F neutral aliphatic
+ aliphatic G aliphatic aromatic S
+ aliphatic G aliphatic aromatic S aliphatic
+ aliphatic I basic basic basic R
+ aliphatic L aliphatic K aliphatic aliphatic aliphatic basic aliphatic
+ aliphatic L aliphatic basic aliphatic aliphatic aliphatic basic aliphatic
+ aliphatic L F neutral aliphatic aliphatic
+ aliphatic L F neutral aliphatic aliphatic basic
+ aliphatic L F neutral aliphatic aliphatic K
+ aliphatic aliphatic A G aliphatic aliphatic A
+ aliphatic aliphatic G L F neutral
+ aliphatic aliphatic G L F neutral aliphatic
+ aliphatic aliphatic G L aromatic neutral
+ aliphatic aliphatic G L aromatic neutral aliphatic
+ aliphatic aliphatic G aliphatic L F
+ aliphatic aliphatic G aliphatic aliphatic F
+ aliphatic aliphatic G aliphatic F neutral
+ aliphatic aliphatic G aliphatic F neutral aliphatic
+ aliphatic aliphatic G aliphatic aromatic neutral
+ aliphatic aliphatic G aliphatic aromatic neutral aliphatic
+ aliphatic aliphatic L F neutral
+ aliphatic aliphatic L F neutral aliphatic
+ aliphatic aliphatic L aromatic S
+ aliphatic aliphatic L aromatic S aliphatic
+ aliphatic aliphatic aliphatic L F neutral
+ aliphatic aliphatic aliphatic L F neutral aliphatic
+ aliphatic aliphatic aliphatic V aliphatic A
+ aliphatic aliphatic aliphatic aliphatic F neutral
+ aliphatic aliphatic aliphatic aliphatic F neutral aliphatic
+ aliphatic aliphatic aliphatic F neutral
+ aliphatic aliphatic aliphatic F neutral aliphatic
+ aliphatic aliphatic aliphatic aromatic S aliphatic aliphatic
+ aliphatic aliphatic aliphatic aromatic S aliphatic aliphatic basic
+ aliphatic aliphatic aliphatic aromatic S aliphatic aliphatic K
+ aliphatic F S aliphatic G
+ aliphatic F neutral aliphatic G
+ aliphatic aromatic S aliphatic G
+ aliphatic aromatic neutral aliphatic G
+ aliphatic P aliphatic aliphatic A G aliphatic aliphatic
+ aliphatic P aliphatic aliphatic aliphatic G aliphatic aliphatic aliphatic
+ aliphatic P aliphatic aliphatic aliphatic aliphatic aliphatic aliphatic A
+ F L P aliphatic aliphatic A G aliphatic aliphatic
+ F L P aliphatic aliphatic A aliphatic aliphatic aliphatic
+ F L P aliphatic aliphatic aliphatic aliphatic aliphatic aliphatic A
+ F aliphatic P aliphatic aliphatic A G aliphatic aliphatic
+ F aliphatic P aliphatic aliphatic A aliphatic aliphatic aliphatic
+ F aliphatic P aliphatic aliphatic aliphatic aliphatic aliphatic aliphatic A
+ aromatic L P aliphatic aliphatic A G aliphatic aliphatic
+ aromatic L P aliphatic aliphatic A aliphatic aliphatic aliphatic
+ aromatic L P aliphatic aliphatic aliphatic aliphatic aliphatic aliphatic A
+ aromatic aliphatic P aliphatic aliphatic A G aliphatic aliphatic
+ aromatic aliphatic P aliphatic aliphatic A aliphatic aliphatic aliphatic
+ aromatic aliphatic P aliphatic aliphatic aliphatic aliphatic aliphatic aliphatic A
+ T L L K K V
+ T L L K basic aliphatic L
+ T L L K basic aliphatic L basic
+ T L L K basic aliphatic L K
+ T L L basic K V
+ T L L basic basic aliphatic L
+ T L L basic basic aliphatic L basic
+ T L L basic basic aliphatic L K
+ T L aliphatic K K V
+ T L aliphatic K basic aliphatic L
+ T L aliphatic K basic aliphatic L basic
+ T L aliphatic K basic aliphatic L K
+ T L aliphatic basic K V
+ T L aliphatic basic basic aliphatic L
+ T L aliphatic basic basic aliphatic L basic
+ T L aliphatic basic basic aliphatic L K
+ T aliphatic L K K V
+ T aliphatic L K basic aliphatic L
+ T aliphatic L K basic aliphatic L basic
+ T aliphatic L K basic aliphatic L K
+ T aliphatic L basic K V
+ T aliphatic L basic basic aliphatic L
+ T aliphatic L basic basic aliphatic L basic
+ T aliphatic L basic basic aliphatic L K
+ T aliphatic aliphatic K basic aliphatic L
+ T aliphatic aliphatic K basic aliphatic L basic
+ T aliphatic aliphatic K basic aliphatic L K
+ T aliphatic aliphatic basic basic aliphatic L
+ T aliphatic aliphatic basic basic aliphatic L basic
+ T aliphatic aliphatic basic basic aliphatic L K
+ neutral aliphatic aliphatic basic K aliphatic L basic aliphatic
+ neutral aliphatic aliphatic basic basic aliphatic L basic aliphatic
+ K aliphatic aliphatic K A aliphatic aliphatic basic
+ K aliphatic aliphatic K A aliphatic aliphatic K
+ P aliphatic aliphatic A G aliphatic aliphatic
+ P aliphatic aliphatic aliphatic aliphatic aliphatic aliphatic A
+ G G L F neutral
+ G G L F S
+ G G L F S aliphatic
+ G G L F S aliphatic aliphatic
+ G G L F S aliphatic G
+ G G L F S aliphatic G basic
+ G G L F S aliphatic G K
+ G G L F S aliphatic aliphatic basic
+ G G L F S aliphatic aliphatic K
+ G G L F neutral aliphatic
+ G G L F neutral aliphatic aliphatic
+ G G L F neutral aliphatic G
+ G G L F neutral aliphatic G basic
+ G G L F neutral aliphatic G K
+ G G L F neutral aliphatic aliphatic basic
+ G G L F neutral aliphatic aliphatic K
+ G G L aromatic neutral
+ G G L aromatic S
+ G G L aromatic S aliphatic
+ G G L aromatic S aliphatic aliphatic
+ G G L aromatic S aliphatic G
+ G G L aromatic S aliphatic G basic
+ G G L aromatic S aliphatic G K
+ G G L aromatic S aliphatic aliphatic basic
+ G G L aromatic S aliphatic aliphatic K
+ G G L aromatic neutral aliphatic
+ G G L aromatic neutral aliphatic aliphatic
+ G G L aromatic neutral aliphatic G
+ G G L aromatic neutral aliphatic G basic
+ G G L aromatic neutral aliphatic G K
+ G G L aromatic neutral aliphatic aliphatic basic
+ G G L aromatic neutral aliphatic aliphatic K
+ G G aliphatic F neutral
+ G G aliphatic F S
+ G G aliphatic F S aliphatic
+ G G aliphatic F S aliphatic aliphatic
+ G G aliphatic F S aliphatic G
+ G G aliphatic F S aliphatic G basic
+ G G aliphatic F S aliphatic G K
+ G G aliphatic F S aliphatic aliphatic basic
+ G G aliphatic F S aliphatic aliphatic K
+ G G aliphatic F neutral aliphatic
+ G G aliphatic F neutral aliphatic aliphatic
+ G G aliphatic F neutral aliphatic G
+ G G aliphatic F neutral aliphatic G basic
+ G G aliphatic F neutral aliphatic G K
+ G G aliphatic F neutral aliphatic aliphatic basic
+ G G aliphatic F neutral aliphatic aliphatic K
+ G G aliphatic aromatic neutral
+ G G aliphatic aromatic S
+ G G aliphatic aromatic S aliphatic
+ G G aliphatic aromatic S aliphatic aliphatic
+ G G aliphatic aromatic S aliphatic G
+ G G aliphatic aromatic S aliphatic G basic
+ G G aliphatic aromatic S aliphatic G K
+ G G aliphatic aromatic S aliphatic aliphatic basic
+ G G aliphatic aromatic S aliphatic aliphatic K
+ G G aliphatic aromatic neutral aliphatic
+ G G aliphatic aromatic neutral aliphatic aliphatic
+ G G aliphatic aromatic neutral aliphatic G
+ G G aliphatic aromatic neutral aliphatic G basic
+ G G aliphatic aromatic neutral aliphatic G K
+ G G aliphatic aromatic neutral aliphatic aliphatic basic
+ G G aliphatic aromatic neutral aliphatic aliphatic K
+ G L F S aliphatic
+ G L F S aliphatic aliphatic
+ G L F S aliphatic G
+ G L F S aliphatic G basic
+ G L F S aliphatic G K
+ G L F S aliphatic aliphatic basic
+ G L F S aliphatic aliphatic K
+ G L F neutral aliphatic G
+ G L F neutral aliphatic G basic
+ G L F neutral aliphatic G K
+ G L aromatic S aliphatic aliphatic
+ G L aromatic S aliphatic G
+ G L aromatic S aliphatic G basic
+ G L aromatic S aliphatic G K
+ G L aromatic S aliphatic aliphatic basic
+ G L aromatic S aliphatic aliphatic K
+ G L aromatic neutral aliphatic G
+ G L aromatic neutral aliphatic G basic
+ G L aromatic neutral aliphatic G K
+ G aliphatic L F neutral
+ G aliphatic L F S
+ G aliphatic L F S aliphatic
+ G aliphatic L F S aliphatic aliphatic
+ G aliphatic L F S aliphatic G
+ G aliphatic L F S aliphatic G basic
+ G aliphatic L F S aliphatic G K
+ G aliphatic L F S aliphatic aliphatic basic
+ G aliphatic L F S aliphatic aliphatic K
+ G aliphatic L F neutral aliphatic
+ G aliphatic L F neutral aliphatic aliphatic
+ G aliphatic L F neutral aliphatic G
+ G aliphatic L F neutral aliphatic G basic
+ G aliphatic L F neutral aliphatic G K
+ G aliphatic L F neutral aliphatic aliphatic basic
+ G aliphatic L F neutral aliphatic aliphatic K
+ G aliphatic L aromatic S
+ G aliphatic L aromatic S aliphatic
+ G aliphatic L aromatic S aliphatic aliphatic
+ G aliphatic L aromatic S aliphatic G
+ G aliphatic L aromatic S aliphatic G basic
+ G aliphatic L aromatic S aliphatic G K
+ G aliphatic L aromatic S aliphatic aliphatic basic
+ G aliphatic L aromatic S aliphatic aliphatic K
+ G aliphatic L aromatic neutral aliphatic G
+ G aliphatic L aromatic neutral aliphatic G basic
+ G aliphatic L aromatic neutral aliphatic G K
+ G aliphatic aliphatic F neutral
+ G aliphatic aliphatic F S
+ G aliphatic aliphatic F S aliphatic
+ G aliphatic aliphatic F S aliphatic aliphatic
+ G aliphatic aliphatic F S aliphatic G
+ G aliphatic aliphatic F S aliphatic G basic
+ G aliphatic aliphatic F S aliphatic G K
+ G aliphatic aliphatic F S aliphatic aliphatic basic
+ G aliphatic aliphatic F S aliphatic aliphatic K
+ G aliphatic aliphatic F neutral aliphatic
+ G aliphatic aliphatic F neutral aliphatic aliphatic
+ G aliphatic aliphatic F neutral aliphatic G
+ G aliphatic aliphatic F neutral aliphatic G basic
+ G aliphatic aliphatic F neutral aliphatic G K
+ G aliphatic aliphatic F neutral aliphatic aliphatic basic
+ G aliphatic aliphatic F neutral aliphatic aliphatic K
+ G aliphatic aliphatic aromatic S aliphatic G
+ G aliphatic aliphatic aromatic S aliphatic G basic
+ G aliphatic aliphatic aromatic S aliphatic G K
+ G aliphatic aliphatic aromatic neutral aliphatic G
+ G aliphatic aliphatic aromatic neutral aliphatic G basic
+ G aliphatic aliphatic aromatic neutral aliphatic G K
+ G aliphatic F S aliphatic G
+ G aliphatic F S aliphatic G basic
+ G aliphatic F S aliphatic G K
+ G aliphatic F S aliphatic aliphatic basic
+ G aliphatic F S aliphatic aliphatic K
+ G aliphatic F neutral aliphatic G
+ G aliphatic F neutral aliphatic G basic
+ G aliphatic F neutral aliphatic G K
+ G aliphatic aromatic S aliphatic G
+ G aliphatic aromatic S aliphatic G basic
+ G aliphatic aromatic S aliphatic G K
+ G aliphatic aromatic S aliphatic aliphatic basic
+ G aliphatic aromatic S aliphatic aliphatic K
+ G aliphatic aromatic neutral aliphatic G
+ G aliphatic aromatic neutral aliphatic G basic
+ G aliphatic aromatic neutral aliphatic G K
+ I G aliphatic L aromatic
+ I G aliphatic L F
+ I G aliphatic aliphatic aromatic
+ I G aliphatic aliphatic F
+ I aliphatic G L aromatic
+ I aliphatic G L F
+ I aliphatic G L F neutral
+ I aliphatic G L F neutral aliphatic
+ I aliphatic G L aromatic neutral
+ I aliphatic G L aromatic neutral aliphatic
+ I aliphatic G aliphatic aromatic
+ I aliphatic G aliphatic F
+ I aliphatic G aliphatic F neutral
+ I aliphatic G aliphatic F neutral aliphatic
+ I aliphatic G aliphatic aromatic neutral
+ I aliphatic G aliphatic aromatic neutral aliphatic
+ I aliphatic aliphatic L F neutral
+ I aliphatic aliphatic L F neutral aliphatic
+ I aliphatic aliphatic L aromatic neutral
+ I aliphatic aliphatic L aromatic neutral aliphatic
+ I aliphatic aliphatic aliphatic aliphatic aliphatic K
+ I aliphatic aliphatic aliphatic F neutral
+ I aliphatic aliphatic aliphatic F neutral aliphatic
+ I aliphatic aliphatic aliphatic aromatic neutral
+ I aliphatic aliphatic aliphatic aromatic neutral aliphatic
+ I basic R basic basic basic
+ I basic basic basic basic basic
+ L I basic R basic
+ L I basic R R
+ L I basic basic R
+ L aliphatic K aliphatic aliphatic L K aliphatic
+ L aliphatic K aliphatic aliphatic L basic aliphatic
+ L aliphatic K aliphatic aliphatic aliphatic K L
+ L aliphatic K aliphatic aliphatic aliphatic basic L
+ L aliphatic basic aliphatic aliphatic L K aliphatic
+ L aliphatic basic aliphatic aliphatic L basic aliphatic
+ L aliphatic basic aliphatic aliphatic aliphatic K L
+ L aliphatic basic aliphatic aliphatic aliphatic basic L
+ L aliphatic basic R basic
+ L aliphatic basic R R
+ L aliphatic basic basic R basic
+ L aliphatic basic basic R basic basic
+ L F S aliphatic G basic
+ L F S aliphatic G K
+ L F S aliphatic aliphatic basic
+ L F S aliphatic aliphatic K
+ L F neutral aliphatic G basic
+ L F neutral aliphatic G K
+ L aromatic S aliphatic G basic
+ L aromatic S aliphatic G K
+ L aromatic S aliphatic aliphatic basic
+ L aromatic S aliphatic aliphatic K
+ L aromatic neutral aliphatic G basic
+ L aromatic neutral aliphatic G K
+ L P aliphatic aliphatic aliphatic G aliphatic A
+ L P aliphatic aliphatic aliphatic G aliphatic aliphatic aliphatic
+ L P aliphatic aliphatic aliphatic G aliphatic aliphatic A
+ L P aliphatic aliphatic aliphatic aliphatic aliphatic A
+ aliphatic G G L aromatic
+ aliphatic G G L F
+ aliphatic G G L F neutral
+ aliphatic G G L F S
+ aliphatic G G L F S aliphatic
+ aliphatic G G L F S aliphatic aliphatic
+ aliphatic G G L F S aliphatic G
+ aliphatic G G L F S aliphatic G basic
+ aliphatic G G L F S aliphatic G K
+ aliphatic G G L F S aliphatic aliphatic basic
+ aliphatic G G L F S aliphatic aliphatic K
+ aliphatic G G L F neutral aliphatic
+ aliphatic G G L F neutral aliphatic aliphatic
+ aliphatic G G L F neutral aliphatic G
+ aliphatic G G L F neutral aliphatic G basic
+ aliphatic G G L F neutral aliphatic G K
+ aliphatic G G L F neutral aliphatic aliphatic basic
+ aliphatic G G L F neutral aliphatic aliphatic K
+ aliphatic G G L aromatic neutral
+ aliphatic G G L aromatic S
+ aliphatic G G L aromatic S aliphatic
+ aliphatic G G L aromatic S aliphatic aliphatic
+ aliphatic G G L aromatic S aliphatic G
+ aliphatic G G L aromatic S aliphatic G basic
+ aliphatic G G L aromatic S aliphatic G K
+ aliphatic G G L aromatic S aliphatic aliphatic basic
+ aliphatic G G L aromatic S aliphatic aliphatic K
+ aliphatic G G L aromatic neutral aliphatic
+ aliphatic G G L aromatic neutral aliphatic aliphatic
+ aliphatic G G L aromatic neutral aliphatic G
+ aliphatic G G L aromatic neutral aliphatic G basic
+ aliphatic G G L aromatic neutral aliphatic G K
+ aliphatic G G L aromatic neutral aliphatic aliphatic basic
+ aliphatic G G L aromatic neutral aliphatic aliphatic K
+ aliphatic G G aliphatic aromatic
+ aliphatic G G aliphatic F
+ aliphatic G G aliphatic F neutral
+ aliphatic G G aliphatic F S
+ aliphatic G G aliphatic F S aliphatic
+ aliphatic G G aliphatic F S aliphatic aliphatic
+ aliphatic G G aliphatic F S aliphatic G
+ aliphatic G G aliphatic F S aliphatic G basic
+ aliphatic G G aliphatic F S aliphatic G K
+ aliphatic G G aliphatic F S aliphatic aliphatic basic
+ aliphatic G G aliphatic F S aliphatic aliphatic K
+ aliphatic G G aliphatic F neutral aliphatic
+ aliphatic G G aliphatic F neutral aliphatic aliphatic
+ aliphatic G G aliphatic F neutral aliphatic G
+ aliphatic G G aliphatic F neutral aliphatic G basic
+ aliphatic G G aliphatic F neutral aliphatic G K
+ aliphatic G G aliphatic F neutral aliphatic aliphatic basic
+ aliphatic G G aliphatic F neutral aliphatic aliphatic K
+ aliphatic G G aliphatic aromatic neutral
+ aliphatic G G aliphatic aromatic S
+ aliphatic G G aliphatic aromatic S aliphatic
+ aliphatic G G aliphatic aromatic S aliphatic aliphatic
+ aliphatic G G aliphatic aromatic S aliphatic G
+ aliphatic G G aliphatic aromatic S aliphatic G basic
+ aliphatic G G aliphatic aromatic S aliphatic G K
+ aliphatic G G aliphatic aromatic S aliphatic aliphatic basic
+ aliphatic G G aliphatic aromatic S aliphatic aliphatic K
+ aliphatic G G aliphatic aromatic neutral aliphatic
+ aliphatic G G aliphatic aromatic neutral aliphatic aliphatic
+ aliphatic G G aliphatic aromatic neutral aliphatic G
+ aliphatic G G aliphatic aromatic neutral aliphatic G basic
+ aliphatic G G aliphatic aromatic neutral aliphatic G K
+ aliphatic G G aliphatic aromatic neutral aliphatic aliphatic basic
+ aliphatic G G aliphatic aromatic neutral aliphatic aliphatic K
+ aliphatic G L F S
+ aliphatic G L F S aliphatic
+ aliphatic G L F S aliphatic aliphatic
+ aliphatic G L F S aliphatic G
+ aliphatic G L F S aliphatic G basic
+ aliphatic G L F S aliphatic G K
+ aliphatic G L F S aliphatic aliphatic basic
+ aliphatic G L F S aliphatic aliphatic K
+ aliphatic G L F neutral aliphatic aliphatic
+ aliphatic G L F neutral aliphatic G
+ aliphatic G L F neutral aliphatic G basic
+ aliphatic G L F neutral aliphatic G K
+ aliphatic G L F neutral aliphatic aliphatic basic
+ aliphatic G L F neutral aliphatic aliphatic K
+ aliphatic G L aromatic S aliphatic aliphatic
+ aliphatic G L aromatic S aliphatic G
+ aliphatic G L aromatic S aliphatic G basic
+ aliphatic G L aromatic S aliphatic G K
+ aliphatic G L aromatic S aliphatic aliphatic basic
+ aliphatic G L aromatic S aliphatic aliphatic K
+ aliphatic G L aromatic neutral aliphatic aliphatic
+ aliphatic G L aromatic neutral aliphatic G
+ aliphatic G L aromatic neutral aliphatic G basic
+ aliphatic G L aromatic neutral aliphatic G K
+ aliphatic G L aromatic neutral aliphatic aliphatic basic
+ aliphatic G L aromatic neutral aliphatic aliphatic K
+ aliphatic G aliphatic L F neutral
+ aliphatic G aliphatic L F S
+ aliphatic G aliphatic L F S aliphatic
+ aliphatic G aliphatic L F S aliphatic aliphatic
+ aliphatic G aliphatic L F S aliphatic G
+ aliphatic G aliphatic L F S aliphatic G basic
+ aliphatic G aliphatic L F S aliphatic G K
+ aliphatic G aliphatic L F S aliphatic aliphatic basic
+ aliphatic G aliphatic L F S aliphatic aliphatic K
+ aliphatic G aliphatic L F neutral aliphatic
+ aliphatic G aliphatic L F neutral aliphatic aliphatic
+ aliphatic G aliphatic L F neutral aliphatic G
+ aliphatic G aliphatic L F neutral aliphatic G basic
+ aliphatic G aliphatic L F neutral aliphatic G K
+ aliphatic G aliphatic L F neutral aliphatic aliphatic basic
+ aliphatic G aliphatic L F neutral aliphatic aliphatic K
+ aliphatic G aliphatic L aromatic S
+ aliphatic G aliphatic L aromatic S aliphatic
+ aliphatic G aliphatic L aromatic S aliphatic aliphatic
+ aliphatic G aliphatic L aromatic S aliphatic G
+ aliphatic G aliphatic L aromatic S aliphatic G basic
+ aliphatic G aliphatic L aromatic S aliphatic G K
+ aliphatic G aliphatic L aromatic S aliphatic aliphatic basic
+ aliphatic G aliphatic L aromatic S aliphatic aliphatic K
+ aliphatic G aliphatic L aromatic neutral aliphatic G
+ aliphatic G aliphatic L aromatic neutral aliphatic G basic
+ aliphatic G aliphatic L aromatic neutral aliphatic G K
+ aliphatic G aliphatic aliphatic F neutral
+ aliphatic G aliphatic aliphatic F S
+ aliphatic G aliphatic aliphatic F S aliphatic
+ aliphatic G aliphatic aliphatic F S aliphatic aliphatic
+ aliphatic G aliphatic aliphatic F S aliphatic G
+ aliphatic G aliphatic aliphatic F S aliphatic G basic
+ aliphatic G aliphatic aliphatic F S aliphatic G K
+ aliphatic G aliphatic aliphatic F S aliphatic aliphatic basic
+ aliphatic G aliphatic aliphatic F S aliphatic aliphatic K
+ aliphatic G aliphatic aliphatic F neutral aliphatic
+ aliphatic G aliphatic aliphatic F neutral aliphatic aliphatic
+ aliphatic G aliphatic aliphatic F neutral aliphatic G
+ aliphatic G aliphatic aliphatic F neutral aliphatic G basic
+ aliphatic G aliphatic aliphatic F neutral aliphatic G K
+ aliphatic G aliphatic aliphatic F neutral aliphatic aliphatic basic
+ aliphatic G aliphatic aliphatic F neutral aliphatic aliphatic K
+ aliphatic G aliphatic aliphatic aromatic S
+ aliphatic G aliphatic aliphatic aromatic S aliphatic
+ aliphatic G aliphatic aliphatic aromatic S aliphatic aliphatic
+ aliphatic G aliphatic aliphatic aromatic S aliphatic G
+ aliphatic G aliphatic aliphatic aromatic S aliphatic G basic
+ aliphatic G aliphatic aliphatic aromatic S aliphatic G K
+ aliphatic G aliphatic aliphatic aromatic S aliphatic aliphatic basic
+ aliphatic G aliphatic aliphatic aromatic S aliphatic aliphatic K
+ aliphatic G aliphatic aliphatic aromatic neutral aliphatic G
+ aliphatic G aliphatic aliphatic aromatic neutral aliphatic G basic
+ aliphatic G aliphatic aliphatic aromatic neutral aliphatic G K
+ aliphatic G aliphatic F S
+ aliphatic G aliphatic F S aliphatic
+ aliphatic G aliphatic F S aliphatic aliphatic
+ aliphatic G aliphatic F S aliphatic G
+ aliphatic G aliphatic F S aliphatic G basic
+ aliphatic G aliphatic F S aliphatic G K
+ aliphatic G aliphatic F S aliphatic aliphatic basic
+ aliphatic G aliphatic F S aliphatic aliphatic K
+ aliphatic G aliphatic F neutral aliphatic aliphatic
+ aliphatic G aliphatic F neutral aliphatic G
+ aliphatic G aliphatic F neutral aliphatic G basic
+ aliphatic G aliphatic F neutral aliphatic G K
+ aliphatic G aliphatic F neutral aliphatic aliphatic basic
+ aliphatic G aliphatic F neutral aliphatic aliphatic K
+ aliphatic G aliphatic aromatic S aliphatic aliphatic
+ aliphatic G aliphatic aromatic S aliphatic G
+ aliphatic G aliphatic aromatic S aliphatic G basic
+ aliphatic G aliphatic aromatic S aliphatic G K
+ aliphatic G aliphatic aromatic S aliphatic aliphatic basic
+ aliphatic G aliphatic aromatic S aliphatic aliphatic K
+ aliphatic G aliphatic aromatic neutral aliphatic aliphatic
+ aliphatic G aliphatic aromatic neutral aliphatic G
+ aliphatic G aliphatic aromatic neutral aliphatic G basic
+ aliphatic G aliphatic aromatic neutral aliphatic G K
+ aliphatic G aliphatic aromatic neutral aliphatic aliphatic basic
+ aliphatic G aliphatic aromatic neutral aliphatic aliphatic K
+ aliphatic I G aliphatic L aromatic
+ aliphatic I G aliphatic L F
+ aliphatic I G aliphatic aliphatic aromatic
+ aliphatic I G aliphatic aliphatic F
+ aliphatic I aliphatic aliphatic L aromatic
+ aliphatic I aliphatic aliphatic L F
+ aliphatic I aliphatic aliphatic aliphatic aromatic
+ aliphatic I aliphatic aliphatic aliphatic F
+ aliphatic I basic R R
+ aliphatic I basic R basic basic
+ aliphatic I basic R basic basic basic
+ aliphatic I basic basic R
+ aliphatic I basic basic basic basic basic
+ aliphatic L aliphatic K aliphatic aliphatic aliphatic K aliphatic
+ aliphatic L aliphatic basic aliphatic aliphatic aliphatic K aliphatic
+ aliphatic L F S aliphatic aliphatic
+ aliphatic L F S aliphatic G
+ aliphatic L F S aliphatic G basic
+ aliphatic L F S aliphatic G K
+ aliphatic L F S aliphatic aliphatic basic
+ aliphatic L F S aliphatic aliphatic K
+ aliphatic L F neutral aliphatic G
+ aliphatic L F neutral aliphatic G basic
+ aliphatic L F neutral aliphatic G K
+ aliphatic L aromatic S aliphatic aliphatic
+ aliphatic L aromatic S aliphatic G
+ aliphatic L aromatic S aliphatic G basic
+ aliphatic L aromatic S aliphatic G K
+ aliphatic L aromatic S aliphatic aliphatic basic
+ aliphatic L aromatic S aliphatic aliphatic K
+ aliphatic L aromatic neutral aliphatic G
+ aliphatic L aromatic neutral aliphatic G basic
+ aliphatic L aromatic neutral aliphatic G K
+ aliphatic aliphatic A G aliphatic A aliphatic
+ aliphatic aliphatic A G aliphatic A A
+ aliphatic aliphatic G G L aromatic
+ aliphatic aliphatic G G L F
+ aliphatic aliphatic G G L F neutral
+ aliphatic aliphatic G G L F S
+ aliphatic aliphatic G G L F S aliphatic
+ aliphatic aliphatic G G L F S aliphatic aliphatic
+ aliphatic aliphatic G G L F S aliphatic G
+ aliphatic aliphatic G G L F S aliphatic G basic
+ aliphatic aliphatic G G L F S aliphatic G K
+ aliphatic aliphatic G G L F S aliphatic aliphatic basic
+ aliphatic aliphatic G G L F S aliphatic aliphatic K
+ aliphatic aliphatic G G L F neutral aliphatic
+ aliphatic aliphatic G G L F neutral aliphatic aliphatic
+ aliphatic aliphatic G G L F neutral aliphatic G
+ aliphatic aliphatic G G L F neutral aliphatic G basic
+ aliphatic aliphatic G G L F neutral aliphatic G K
+ aliphatic aliphatic G G L F neutral aliphatic aliphatic basic
+ aliphatic aliphatic G G L F neutral aliphatic aliphatic K
+ aliphatic aliphatic G G L aromatic neutral
+ aliphatic aliphatic G G L aromatic S
+ aliphatic aliphatic G G L aromatic S aliphatic
+ aliphatic aliphatic G G L aromatic S aliphatic aliphatic
+ aliphatic aliphatic G G L aromatic S aliphatic G
+ aliphatic aliphatic G G L aromatic S aliphatic G basic
+ aliphatic aliphatic G G L aromatic S aliphatic G K
+ aliphatic aliphatic G G L aromatic S aliphatic aliphatic basic
+ aliphatic aliphatic G G L aromatic S aliphatic aliphatic K
+ aliphatic aliphatic G G L aromatic neutral aliphatic
+ aliphatic aliphatic G G L aromatic neutral aliphatic aliphatic
+ aliphatic aliphatic G G L aromatic neutral aliphatic G
+ aliphatic aliphatic G G L aromatic neutral aliphatic G basic
+ aliphatic aliphatic G G L aromatic neutral aliphatic G K
+ aliphatic aliphatic G G L aromatic neutral aliphatic aliphatic basic
+ aliphatic aliphatic G G L aromatic neutral aliphatic aliphatic K
+ aliphatic aliphatic G G aliphatic aromatic
+ aliphatic aliphatic G G aliphatic F
+ aliphatic aliphatic G G aliphatic F neutral
+ aliphatic aliphatic G G aliphatic F S
+ aliphatic aliphatic G G aliphatic F S aliphatic
+ aliphatic aliphatic G G aliphatic F S aliphatic aliphatic
+ aliphatic aliphatic G G aliphatic F S aliphatic G
+ aliphatic aliphatic G G aliphatic F S aliphatic G basic
+ aliphatic aliphatic G G aliphatic F S aliphatic G K
+ aliphatic aliphatic G G aliphatic F S aliphatic aliphatic basic
+ aliphatic aliphatic G G aliphatic F S aliphatic aliphatic K
+ aliphatic aliphatic G G aliphatic F neutral aliphatic
+ aliphatic aliphatic G G aliphatic F neutral aliphatic aliphatic
+ aliphatic aliphatic G G aliphatic F neutral aliphatic G
+ aliphatic aliphatic G G aliphatic F neutral aliphatic G basic
+ aliphatic aliphatic G G aliphatic F neutral aliphatic G K
+ aliphatic aliphatic G G aliphatic F neutral aliphatic aliphatic basic
+ aliphatic aliphatic G G aliphatic F neutral aliphatic aliphatic K
+ aliphatic aliphatic G G aliphatic aromatic neutral
+ aliphatic aliphatic G G aliphatic aromatic S
+ aliphatic aliphatic G G aliphatic aromatic S aliphatic
+ aliphatic aliphatic G G aliphatic aromatic S aliphatic aliphatic
+ aliphatic aliphatic G G aliphatic aromatic S aliphatic G
+ aliphatic aliphatic G G aliphatic aromatic S aliphatic G basic
+ aliphatic aliphatic G G aliphatic aromatic S aliphatic G K
+ aliphatic aliphatic G G aliphatic aromatic S aliphatic aliphatic basic
+ aliphatic aliphatic G G aliphatic aromatic S aliphatic aliphatic K
+ aliphatic aliphatic G G aliphatic aromatic neutral aliphatic
+ aliphatic aliphatic G G aliphatic aromatic neutral aliphatic aliphatic
+ aliphatic aliphatic G G aliphatic aromatic neutral aliphatic G
+ aliphatic aliphatic G G aliphatic aromatic neutral aliphatic G basic
+ aliphatic aliphatic G G aliphatic aromatic neutral aliphatic G K
+ aliphatic aliphatic G G aliphatic aromatic neutral aliphatic aliphatic basic
+ aliphatic aliphatic G G aliphatic aromatic neutral aliphatic aliphatic K
+ aliphatic aliphatic G L F S
+ aliphatic aliphatic G L F S aliphatic
+ aliphatic aliphatic G L F S aliphatic aliphatic
+ aliphatic aliphatic G L F S aliphatic G
+ aliphatic aliphatic G L F S aliphatic G basic
+ aliphatic aliphatic G L F S aliphatic G K
+ aliphatic aliphatic G L F S aliphatic aliphatic basic
+ aliphatic aliphatic G L F S aliphatic aliphatic K
+ aliphatic aliphatic G L F neutral aliphatic aliphatic
+ aliphatic aliphatic G L F neutral aliphatic G
+ aliphatic aliphatic G L F neutral aliphatic G basic
+ aliphatic aliphatic G L F neutral aliphatic G K
+ aliphatic aliphatic G L F neutral aliphatic aliphatic basic
+ aliphatic aliphatic G L F neutral aliphatic aliphatic K
+ aliphatic aliphatic G L aromatic S
+ aliphatic aliphatic G L aromatic S aliphatic
+ aliphatic aliphatic G L aromatic S aliphatic aliphatic
+ aliphatic aliphatic G L aromatic S aliphatic G
+ aliphatic aliphatic G L aromatic S aliphatic G basic
+ aliphatic aliphatic G L aromatic S aliphatic G K
+ aliphatic aliphatic G L aromatic S aliphatic aliphatic basic
+ aliphatic aliphatic G L aromatic S aliphatic aliphatic K
+ aliphatic aliphatic G L aromatic neutral aliphatic aliphatic
+ aliphatic aliphatic G L aromatic neutral aliphatic G
+ aliphatic aliphatic G L aromatic neutral aliphatic G basic
+ aliphatic aliphatic G L aromatic neutral aliphatic G K
+ aliphatic aliphatic G L aromatic neutral aliphatic aliphatic basic
+ aliphatic aliphatic G L aromatic neutral aliphatic aliphatic K
+ aliphatic aliphatic G aliphatic L F neutral
+ aliphatic aliphatic G aliphatic L F S
+ aliphatic aliphatic G aliphatic L F S aliphatic
+ aliphatic aliphatic G aliphatic L F S aliphatic aliphatic
+ aliphatic aliphatic G aliphatic L F S aliphatic G
+ aliphatic aliphatic G aliphatic L F S aliphatic G basic
+ aliphatic aliphatic G aliphatic L F S aliphatic G K
+ aliphatic aliphatic G aliphatic L F S aliphatic aliphatic basic
+ aliphatic aliphatic G aliphatic L F S aliphatic aliphatic K
+ aliphatic aliphatic G aliphatic L F neutral aliphatic
+ aliphatic aliphatic G aliphatic L F neutral aliphatic aliphatic
+ aliphatic aliphatic G aliphatic L F neutral aliphatic G
+ aliphatic aliphatic G aliphatic L F neutral aliphatic G basic
+ aliphatic aliphatic G aliphatic L F neutral aliphatic G K
+ aliphatic aliphatic G aliphatic L F neutral aliphatic aliphatic basic
+ aliphatic aliphatic G aliphatic L F neutral aliphatic aliphatic K
+ aliphatic aliphatic G aliphatic L aromatic neutral
+ aliphatic aliphatic G aliphatic L aromatic S
+ aliphatic aliphatic G aliphatic L aromatic S aliphatic
+ aliphatic aliphatic G aliphatic L aromatic S aliphatic aliphatic
+ aliphatic aliphatic G aliphatic L aromatic S aliphatic G
+ aliphatic aliphatic G aliphatic L aromatic S aliphatic G basic
+ aliphatic aliphatic G aliphatic L aromatic S aliphatic G K
+ aliphatic aliphatic G aliphatic L aromatic S aliphatic aliphatic basic
+ aliphatic aliphatic G aliphatic L aromatic S aliphatic aliphatic K
+ aliphatic aliphatic G aliphatic L aromatic neutral aliphatic
+ aliphatic aliphatic G aliphatic L aromatic neutral aliphatic aliphatic
+ aliphatic aliphatic G aliphatic L aromatic neutral aliphatic G
+ aliphatic aliphatic G aliphatic L aromatic neutral aliphatic G basic
+ aliphatic aliphatic G aliphatic L aromatic neutral aliphatic G K
+ aliphatic aliphatic G aliphatic L aromatic neutral aliphatic aliphatic basic
+ aliphatic aliphatic G aliphatic L aromatic neutral aliphatic aliphatic K
+ aliphatic aliphatic G aliphatic aliphatic F neutral
+ aliphatic aliphatic G aliphatic aliphatic F S
+ aliphatic aliphatic G aliphatic aliphatic F S aliphatic
+ aliphatic aliphatic G aliphatic aliphatic F S aliphatic aliphatic
+ aliphatic aliphatic G aliphatic aliphatic F S aliphatic G
+ aliphatic aliphatic G aliphatic aliphatic F S aliphatic G basic
+ aliphatic aliphatic G aliphatic aliphatic F S aliphatic G K
+ aliphatic aliphatic G aliphatic aliphatic F S aliphatic aliphatic basic
+ aliphatic aliphatic G aliphatic aliphatic F S aliphatic aliphatic K
+ aliphatic aliphatic G aliphatic aliphatic F neutral aliphatic
+ aliphatic aliphatic G aliphatic aliphatic F neutral aliphatic aliphatic
+ aliphatic aliphatic G aliphatic aliphatic F neutral aliphatic G
+ aliphatic aliphatic G aliphatic aliphatic F neutral aliphatic G basic
+ aliphatic aliphatic G aliphatic aliphatic F neutral aliphatic G K
+ aliphatic aliphatic G aliphatic aliphatic F neutral aliphatic aliphatic basic
+ aliphatic aliphatic G aliphatic aliphatic F neutral aliphatic aliphatic K
+ aliphatic aliphatic G aliphatic aliphatic aromatic neutral
+ aliphatic aliphatic G aliphatic aliphatic aromatic S
+ aliphatic aliphatic G aliphatic aliphatic aromatic S aliphatic
+ aliphatic aliphatic G aliphatic aliphatic aromatic S aliphatic aliphatic
+ aliphatic aliphatic G aliphatic aliphatic aromatic S aliphatic G
+ aliphatic aliphatic G aliphatic aliphatic aromatic S aliphatic G basic
+ aliphatic aliphatic G aliphatic aliphatic aromatic S aliphatic G K
+ aliphatic aliphatic G aliphatic aliphatic aromatic S aliphatic aliphatic basic
+ aliphatic aliphatic G aliphatic aliphatic aromatic S aliphatic aliphatic K
+ aliphatic aliphatic G aliphatic aliphatic aromatic neutral aliphatic
+ aliphatic aliphatic G aliphatic aliphatic aromatic neutral aliphatic aliphatic
+ aliphatic aliphatic G aliphatic aliphatic aromatic neutral aliphatic G
+ aliphatic aliphatic G aliphatic aliphatic aromatic neutral aliphatic G basic
+ aliphatic aliphatic G aliphatic aliphatic aromatic neutral aliphatic G K
+ aliphatic aliphatic G aliphatic aliphatic aromatic neutral aliphatic aliphatic basic
+ aliphatic aliphatic G aliphatic aliphatic aromatic neutral aliphatic aliphatic K
+ aliphatic aliphatic G aliphatic F S
+ aliphatic aliphatic G aliphatic F S aliphatic
+ aliphatic aliphatic G aliphatic F S aliphatic aliphatic
+ aliphatic aliphatic G aliphatic F S aliphatic G
+ aliphatic aliphatic G aliphatic F S aliphatic G basic
+ aliphatic aliphatic G aliphatic F S aliphatic G K
+ aliphatic aliphatic G aliphatic F S aliphatic aliphatic basic
+ aliphatic aliphatic G aliphatic F S aliphatic aliphatic K
+ aliphatic aliphatic G aliphatic F neutral aliphatic aliphatic
+ aliphatic aliphatic G aliphatic F neutral aliphatic G
+ aliphatic aliphatic G aliphatic F neutral aliphatic G basic
+ aliphatic aliphatic G aliphatic F neutral aliphatic G K
+ aliphatic aliphatic G aliphatic F neutral aliphatic aliphatic basic
+ aliphatic aliphatic G aliphatic F neutral aliphatic aliphatic K
+ aliphatic aliphatic G aliphatic aromatic S
+ aliphatic aliphatic G aliphatic aromatic S aliphatic
+ aliphatic aliphatic G aliphatic aromatic S aliphatic aliphatic
+ aliphatic aliphatic G aliphatic aromatic S aliphatic G
+ aliphatic aliphatic G aliphatic aromatic S aliphatic G basic
+ aliphatic aliphatic G aliphatic aromatic S aliphatic G K
+ aliphatic aliphatic G aliphatic aromatic S aliphatic aliphatic basic
+ aliphatic aliphatic G aliphatic aromatic S aliphatic aliphatic K
+ aliphatic aliphatic G aliphatic aromatic neutral aliphatic aliphatic
+ aliphatic aliphatic G aliphatic aromatic neutral aliphatic G
+ aliphatic aliphatic G aliphatic aromatic neutral aliphatic G basic
+ aliphatic aliphatic G aliphatic aromatic neutral aliphatic G K
+ aliphatic aliphatic G aliphatic aromatic neutral aliphatic aliphatic basic
+ aliphatic aliphatic G aliphatic aromatic neutral aliphatic aliphatic K
+ aliphatic aliphatic L A basic
+ aliphatic aliphatic L F S
+ aliphatic aliphatic L F S aliphatic
+ aliphatic aliphatic L F S aliphatic aliphatic
+ aliphatic aliphatic L F S aliphatic G
+ aliphatic aliphatic L F S aliphatic G basic
+ aliphatic aliphatic L F S aliphatic G K
+ aliphatic aliphatic L F S aliphatic aliphatic basic
+ aliphatic aliphatic L F S aliphatic aliphatic K
+ aliphatic aliphatic L F neutral aliphatic aliphatic
+ aliphatic aliphatic L F neutral aliphatic G
+ aliphatic aliphatic L F neutral aliphatic G basic
+ aliphatic aliphatic L F neutral aliphatic G K
+ aliphatic aliphatic L F neutral aliphatic aliphatic basic
+ aliphatic aliphatic L F neutral aliphatic aliphatic K
+ aliphatic aliphatic L aromatic S aliphatic aliphatic
+ aliphatic aliphatic L aromatic S aliphatic G
+ aliphatic aliphatic L aromatic S aliphatic G basic
+ aliphatic aliphatic L aromatic S aliphatic G K
+ aliphatic aliphatic L aromatic S aliphatic aliphatic basic
+ aliphatic aliphatic L aromatic S aliphatic aliphatic K
+ aliphatic aliphatic L aromatic neutral aliphatic G
+ aliphatic aliphatic L aromatic neutral aliphatic G basic
+ aliphatic aliphatic L aromatic neutral aliphatic G K
+ aliphatic aliphatic aliphatic G L aromatic
+ aliphatic aliphatic aliphatic G L F
+ aliphatic aliphatic aliphatic G L F neutral
+ aliphatic aliphatic aliphatic G L F S
+ aliphatic aliphatic aliphatic G L F S aliphatic
+ aliphatic aliphatic aliphatic G L F S aliphatic aliphatic
+ aliphatic aliphatic aliphatic G L F S aliphatic G
+ aliphatic aliphatic aliphatic G L F S aliphatic G basic
+ aliphatic aliphatic aliphatic G L F S aliphatic G K
+ aliphatic aliphatic aliphatic G L F S aliphatic aliphatic basic
+ aliphatic aliphatic aliphatic G L F S aliphatic aliphatic K
+ aliphatic aliphatic aliphatic G L F neutral aliphatic
+ aliphatic aliphatic aliphatic G L F neutral aliphatic aliphatic
+ aliphatic aliphatic aliphatic G L F neutral aliphatic G
+ aliphatic aliphatic aliphatic G L F neutral aliphatic G basic
+ aliphatic aliphatic aliphatic G L F neutral aliphatic G K
+ aliphatic aliphatic aliphatic G L F neutral aliphatic aliphatic basic
+ aliphatic aliphatic aliphatic G L F neutral aliphatic aliphatic K
+ aliphatic aliphatic aliphatic G L aromatic neutral
+ aliphatic aliphatic aliphatic G L aromatic S
+ aliphatic aliphatic aliphatic G L aromatic S aliphatic
+ aliphatic aliphatic aliphatic G L aromatic S aliphatic aliphatic
+ aliphatic aliphatic aliphatic G L aromatic S aliphatic G
+ aliphatic aliphatic aliphatic G L aromatic S aliphatic G basic
+ aliphatic aliphatic aliphatic G L aromatic S aliphatic G K
+ aliphatic aliphatic aliphatic G L aromatic S aliphatic aliphatic basic
+ aliphatic aliphatic aliphatic G L aromatic S aliphatic aliphatic K
+ aliphatic aliphatic aliphatic G L aromatic neutral aliphatic
+ aliphatic aliphatic aliphatic G L aromatic neutral aliphatic aliphatic
+ aliphatic aliphatic aliphatic G L aromatic neutral aliphatic G
+ aliphatic aliphatic aliphatic G L aromatic neutral aliphatic G basic
+ aliphatic aliphatic aliphatic G L aromatic neutral aliphatic G K
+ aliphatic aliphatic aliphatic G L aromatic neutral aliphatic aliphatic basic
+ aliphatic aliphatic aliphatic G L aromatic neutral aliphatic aliphatic K
+ aliphatic aliphatic aliphatic G aliphatic aromatic
+ aliphatic aliphatic aliphatic G aliphatic F
+ aliphatic aliphatic aliphatic G aliphatic F neutral
+ aliphatic aliphatic aliphatic G aliphatic F S
+ aliphatic aliphatic aliphatic G aliphatic F S aliphatic
+ aliphatic aliphatic aliphatic G aliphatic F S aliphatic aliphatic
+ aliphatic aliphatic aliphatic G aliphatic F S aliphatic G
+ aliphatic aliphatic aliphatic G aliphatic F S aliphatic G basic
+ aliphatic aliphatic aliphatic G aliphatic F S aliphatic G K
+ aliphatic aliphatic aliphatic G aliphatic F S aliphatic aliphatic basic
+ aliphatic aliphatic aliphatic G aliphatic F S aliphatic aliphatic K
+ aliphatic aliphatic aliphatic G aliphatic F neutral aliphatic
+ aliphatic aliphatic aliphatic G aliphatic F neutral aliphatic aliphatic
+ aliphatic aliphatic aliphatic G aliphatic F neutral aliphatic G
+ aliphatic aliphatic aliphatic G aliphatic F neutral aliphatic G basic
+ aliphatic aliphatic aliphatic G aliphatic F neutral aliphatic G K
+ aliphatic aliphatic aliphatic G aliphatic F neutral aliphatic aliphatic basic
+ aliphatic aliphatic aliphatic G aliphatic F neutral aliphatic aliphatic K
+ aliphatic aliphatic aliphatic G aliphatic aromatic neutral
+ aliphatic aliphatic aliphatic G aliphatic aromatic S
+ aliphatic aliphatic aliphatic G aliphatic aromatic S aliphatic
+ aliphatic aliphatic aliphatic G aliphatic aromatic S aliphatic aliphatic
+ aliphatic aliphatic aliphatic G aliphatic aromatic S aliphatic G
+ aliphatic aliphatic aliphatic G aliphatic aromatic S aliphatic G basic
+ aliphatic aliphatic aliphatic G aliphatic aromatic S aliphatic G K
+ aliphatic aliphatic aliphatic G aliphatic aromatic S aliphatic aliphatic basic
+ aliphatic aliphatic aliphatic G aliphatic aromatic S aliphatic aliphatic K
+ aliphatic aliphatic aliphatic G aliphatic aromatic neutral aliphatic
+ aliphatic aliphatic aliphatic G aliphatic aromatic neutral aliphatic aliphatic
+ aliphatic aliphatic aliphatic G aliphatic aromatic neutral aliphatic G
+ aliphatic aliphatic aliphatic G aliphatic aromatic neutral aliphatic G basic
+ aliphatic aliphatic aliphatic G aliphatic aromatic neutral aliphatic G K
+ aliphatic aliphatic aliphatic G aliphatic aromatic neutral aliphatic aliphatic basic
+ aliphatic aliphatic aliphatic G aliphatic aromatic neutral aliphatic aliphatic K
+ aliphatic aliphatic aliphatic L F S
+ aliphatic aliphatic aliphatic L F S aliphatic
+ aliphatic aliphatic aliphatic L F S aliphatic aliphatic
+ aliphatic aliphatic aliphatic L F S aliphatic G
+ aliphatic aliphatic aliphatic L F S aliphatic G basic
+ aliphatic aliphatic aliphatic L F S aliphatic G K
+ aliphatic aliphatic aliphatic L F S aliphatic aliphatic basic
+ aliphatic aliphatic aliphatic L F S aliphatic aliphatic K
+ aliphatic aliphatic aliphatic L F neutral aliphatic aliphatic
+ aliphatic aliphatic aliphatic L F neutral aliphatic G
+ aliphatic aliphatic aliphatic L F neutral aliphatic G basic
+ aliphatic aliphatic aliphatic L F neutral aliphatic G K
+ aliphatic aliphatic aliphatic L F neutral aliphatic aliphatic basic
+ aliphatic aliphatic aliphatic L F neutral aliphatic aliphatic K
+ aliphatic aliphatic aliphatic L aromatic S
+ aliphatic aliphatic aliphatic L aromatic S aliphatic
+ aliphatic aliphatic aliphatic L aromatic S aliphatic aliphatic
+ aliphatic aliphatic aliphatic L aromatic S aliphatic G
+ aliphatic aliphatic aliphatic L aromatic S aliphatic G basic
+ aliphatic aliphatic aliphatic L aromatic S aliphatic G K
+ aliphatic aliphatic aliphatic L aromatic S aliphatic aliphatic basic
+ aliphatic aliphatic aliphatic L aromatic S aliphatic aliphatic K
+ aliphatic aliphatic aliphatic L aromatic neutral aliphatic G
+ aliphatic aliphatic aliphatic L aromatic neutral aliphatic G basic
+ aliphatic aliphatic aliphatic L aromatic neutral aliphatic G K
+ aliphatic aliphatic aliphatic aliphatic L F neutral
+ aliphatic aliphatic aliphatic aliphatic L F S
+ aliphatic aliphatic aliphatic aliphatic L F S aliphatic
+ aliphatic aliphatic aliphatic aliphatic L F S aliphatic aliphatic
+ aliphatic aliphatic aliphatic aliphatic L F S aliphatic G
+ aliphatic aliphatic aliphatic aliphatic L F S aliphatic G basic
+ aliphatic aliphatic aliphatic aliphatic L F S aliphatic G K
+ aliphatic aliphatic aliphatic aliphatic L F S aliphatic aliphatic basic
+ aliphatic aliphatic aliphatic aliphatic L F S aliphatic aliphatic K
+ aliphatic aliphatic aliphatic aliphatic L F neutral aliphatic
+ aliphatic aliphatic aliphatic aliphatic L F neutral aliphatic aliphatic
+ aliphatic aliphatic aliphatic aliphatic L F neutral aliphatic G
+ aliphatic aliphatic aliphatic aliphatic L F neutral aliphatic G basic
+ aliphatic aliphatic aliphatic aliphatic L F neutral aliphatic G K
+ aliphatic aliphatic aliphatic aliphatic L F neutral aliphatic aliphatic basic
+ aliphatic aliphatic aliphatic aliphatic L F neutral aliphatic aliphatic K
+ aliphatic aliphatic aliphatic aliphatic L aromatic neutral
+ aliphatic aliphatic aliphatic aliphatic L aromatic S
+ aliphatic aliphatic aliphatic aliphatic L aromatic S aliphatic
+ aliphatic aliphatic aliphatic aliphatic L aromatic S aliphatic aliphatic
+ aliphatic aliphatic aliphatic aliphatic L aromatic S aliphatic G
+ aliphatic aliphatic aliphatic aliphatic L aromatic S aliphatic G basic
+ aliphatic aliphatic aliphatic aliphatic L aromatic S aliphatic G K
+ aliphatic aliphatic aliphatic aliphatic L aromatic S aliphatic aliphatic basic
+ aliphatic aliphatic aliphatic aliphatic L aromatic S aliphatic aliphatic K
+ aliphatic aliphatic aliphatic aliphatic L aromatic neutral aliphatic
+ aliphatic aliphatic aliphatic aliphatic L aromatic neutral aliphatic aliphatic
+ aliphatic aliphatic aliphatic aliphatic L aromatic neutral aliphatic G
+ aliphatic aliphatic aliphatic aliphatic L aromatic neutral aliphatic G basic
+ aliphatic aliphatic aliphatic aliphatic L aromatic neutral aliphatic G K
+ aliphatic aliphatic aliphatic aliphatic L aromatic neutral aliphatic aliphatic basic
+ aliphatic aliphatic aliphatic aliphatic L aromatic neutral aliphatic aliphatic K
+ aliphatic aliphatic aliphatic aliphatic aliphatic F neutral
+ aliphatic aliphatic aliphatic aliphatic aliphatic F S
+ aliphatic aliphatic aliphatic aliphatic aliphatic F S aliphatic
+ aliphatic aliphatic aliphatic aliphatic aliphatic F S aliphatic aliphatic
+ aliphatic aliphatic aliphatic aliphatic aliphatic F S aliphatic G
+ aliphatic aliphatic aliphatic aliphatic aliphatic F S aliphatic G basic
+ aliphatic aliphatic aliphatic aliphatic aliphatic F S aliphatic G K
+ aliphatic aliphatic aliphatic aliphatic aliphatic F S aliphatic aliphatic basic
+ aliphatic aliphatic aliphatic aliphatic aliphatic F S aliphatic aliphatic K
+ aliphatic aliphatic aliphatic aliphatic aliphatic F neutral aliphatic
+ aliphatic aliphatic aliphatic aliphatic aliphatic F neutral aliphatic aliphatic
+ aliphatic aliphatic aliphatic aliphatic aliphatic F neutral aliphatic G
+ aliphatic aliphatic aliphatic aliphatic aliphatic F neutral aliphatic G basic
+ aliphatic aliphatic aliphatic aliphatic aliphatic F neutral aliphatic G K
+ aliphatic aliphatic aliphatic aliphatic aliphatic F neutral aliphatic aliphatic basic
+ aliphatic aliphatic aliphatic aliphatic aliphatic F neutral aliphatic aliphatic K
+ aliphatic aliphatic aliphatic aliphatic aliphatic aromatic neutral
+ aliphatic aliphatic aliphatic aliphatic aliphatic aromatic S
+ aliphatic aliphatic aliphatic aliphatic aliphatic aromatic S aliphatic
+ aliphatic aliphatic aliphatic aliphatic aliphatic aromatic S aliphatic aliphatic
+ aliphatic aliphatic aliphatic aliphatic aliphatic aromatic S aliphatic G
+ aliphatic aliphatic aliphatic aliphatic aliphatic aromatic S aliphatic G basic
+ aliphatic aliphatic aliphatic aliphatic aliphatic aromatic S aliphatic G K
+ aliphatic aliphatic aliphatic aliphatic aliphatic aromatic S aliphatic aliphatic basic
+ aliphatic aliphatic aliphatic aliphatic aliphatic aromatic S aliphatic aliphatic K
+ aliphatic aliphatic aliphatic aliphatic aliphatic aromatic neutral aliphatic
+ aliphatic aliphatic aliphatic aliphatic aliphatic aromatic neutral aliphatic aliphatic
+ aliphatic aliphatic aliphatic aliphatic aliphatic aromatic neutral aliphatic G
+ aliphatic aliphatic aliphatic aliphatic aliphatic aromatic neutral aliphatic G basic
+ aliphatic aliphatic aliphatic aliphatic aliphatic aromatic neutral aliphatic G K
+ aliphatic aliphatic aliphatic aliphatic aliphatic aromatic neutral aliphatic aliphatic basic
+ aliphatic aliphatic aliphatic aliphatic aliphatic aromatic neutral aliphatic aliphatic K
+ aliphatic aliphatic aliphatic aliphatic F S
+ aliphatic aliphatic aliphatic aliphatic F S aliphatic
+ aliphatic aliphatic aliphatic aliphatic F S aliphatic aliphatic
+ aliphatic aliphatic aliphatic aliphatic F S aliphatic G
+ aliphatic aliphatic aliphatic aliphatic F S aliphatic G basic
+ aliphatic aliphatic aliphatic aliphatic F S aliphatic G K
+ aliphatic aliphatic aliphatic aliphatic F S aliphatic aliphatic basic
+ aliphatic aliphatic aliphatic aliphatic F S aliphatic aliphatic K
+ aliphatic aliphatic aliphatic aliphatic F neutral aliphatic aliphatic
+ aliphatic aliphatic aliphatic aliphatic F neutral aliphatic G
+ aliphatic aliphatic aliphatic aliphatic F neutral aliphatic G basic
+ aliphatic aliphatic aliphatic aliphatic F neutral aliphatic G K
+ aliphatic aliphatic aliphatic aliphatic F neutral aliphatic aliphatic basic
+ aliphatic aliphatic aliphatic aliphatic F neutral aliphatic aliphatic K
+ aliphatic aliphatic aliphatic aliphatic aromatic S
+ aliphatic aliphatic aliphatic aliphatic aromatic S aliphatic
+ aliphatic aliphatic aliphatic aliphatic aromatic S aliphatic aliphatic
+ aliphatic aliphatic aliphatic aliphatic aromatic S aliphatic G
+ aliphatic aliphatic aliphatic aliphatic aromatic S aliphatic G basic
+ aliphatic aliphatic aliphatic aliphatic aromatic S aliphatic G K
+ aliphatic aliphatic aliphatic aliphatic aromatic S aliphatic aliphatic basic
+ aliphatic aliphatic aliphatic aliphatic aromatic S aliphatic aliphatic K
+ aliphatic aliphatic aliphatic aliphatic aromatic neutral aliphatic G
+ aliphatic aliphatic aliphatic aliphatic aromatic neutral aliphatic G basic
+ aliphatic aliphatic aliphatic aliphatic aromatic neutral aliphatic G K
+ aliphatic aliphatic aliphatic F S
+ aliphatic aliphatic aliphatic F S aliphatic
+ aliphatic aliphatic aliphatic F S aliphatic aliphatic
+ aliphatic aliphatic aliphatic F S aliphatic G
+ aliphatic aliphatic aliphatic F S aliphatic G basic
+ aliphatic aliphatic aliphatic F S aliphatic G K
+ aliphatic aliphatic aliphatic F S aliphatic aliphatic basic
+ aliphatic aliphatic aliphatic F S aliphatic aliphatic K
+ aliphatic aliphatic aliphatic F neutral aliphatic aliphatic
+ aliphatic aliphatic aliphatic F neutral aliphatic G
+ aliphatic aliphatic aliphatic F neutral aliphatic G basic
+ aliphatic aliphatic aliphatic F neutral aliphatic G K
+ aliphatic aliphatic aliphatic F neutral aliphatic aliphatic basic
+ aliphatic aliphatic aliphatic F neutral aliphatic aliphatic K
+ aliphatic aliphatic aliphatic aromatic S aliphatic G
+ aliphatic aliphatic aliphatic aromatic S aliphatic G basic
+ aliphatic aliphatic aliphatic aromatic S aliphatic G K
+ aliphatic aliphatic aliphatic aromatic neutral aliphatic G
+ aliphatic aliphatic aliphatic aromatic neutral aliphatic G basic
+ aliphatic aliphatic aliphatic aromatic neutral aliphatic G K
+ aliphatic aliphatic aliphatic K L aliphatic aliphatic
+ aliphatic aliphatic aliphatic basic L aliphatic aliphatic
+ aliphatic aliphatic F S aliphatic G
+ aliphatic aliphatic F S aliphatic G basic
+ aliphatic aliphatic F S aliphatic G K
+ aliphatic aliphatic F S aliphatic aliphatic basic
+ aliphatic aliphatic F S aliphatic aliphatic K
+ aliphatic aliphatic F neutral aliphatic G
+ aliphatic aliphatic F neutral aliphatic G basic
+ aliphatic aliphatic F neutral aliphatic G K
+ aliphatic aliphatic aromatic S aliphatic G
+ aliphatic aliphatic aromatic S aliphatic G basic
+ aliphatic aliphatic aromatic S aliphatic G K
+ aliphatic aliphatic aromatic neutral aliphatic G
+ aliphatic aliphatic aromatic neutral aliphatic G basic
+ aliphatic aliphatic aromatic neutral aliphatic G K
+ aliphatic aliphatic S aliphatic L S
+ aliphatic aliphatic basic R basic basic basic
+ aliphatic aliphatic basic basic R basic basic
+ aliphatic F S aliphatic G basic
+ aliphatic F S aliphatic G K
+ aliphatic F S aliphatic aliphatic basic
+ aliphatic F S aliphatic aliphatic K
+ aliphatic F neutral aliphatic G basic
+ aliphatic F neutral aliphatic G K
+ aliphatic aromatic S aliphatic G basic
+ aliphatic aromatic S aliphatic G K
+ aliphatic aromatic neutral aliphatic G basic
+ aliphatic aromatic neutral aliphatic G K
+ aliphatic S aliphatic L S
+ aliphatic basic R R R basic
+ aliphatic basic R R basic basic
+ aliphatic P aliphatic aliphatic aliphatic G aliphatic A
+ aliphatic P aliphatic aliphatic aliphatic G aliphatic aliphatic A
+ aliphatic P aliphatic aliphatic aliphatic aliphatic aliphatic A
+ F L P aliphatic aliphatic aliphatic G aliphatic A
+ F L P aliphatic aliphatic aliphatic G aliphatic aliphatic aliphatic
+ F L P aliphatic aliphatic aliphatic G aliphatic aliphatic A
+ F L P aliphatic aliphatic aliphatic aliphatic aliphatic A
+ F aliphatic basic basic aliphatic I
+ F aliphatic P aliphatic aliphatic aliphatic G aliphatic A
+ F aliphatic P aliphatic aliphatic aliphatic G aliphatic aliphatic aliphatic
+ F aliphatic P aliphatic aliphatic aliphatic G aliphatic aliphatic A
+ F aliphatic P aliphatic aliphatic aliphatic aliphatic aliphatic A
+ F S aliphatic G basic
+ F S aliphatic G K
+ F S aliphatic aliphatic basic
+ F S aliphatic aliphatic K
+ F neutral aliphatic G basic
+ F neutral aliphatic G K
+ aromatic L P aliphatic aliphatic aliphatic G aliphatic A
+ aromatic L P aliphatic aliphatic aliphatic G aliphatic aliphatic aliphatic
+ aromatic L P aliphatic aliphatic aliphatic G aliphatic aliphatic A
+ aromatic L P aliphatic aliphatic aliphatic aliphatic aliphatic A
+ aromatic aliphatic basic basic aliphatic I
+ aromatic aliphatic P aliphatic aliphatic aliphatic G aliphatic A
+ aromatic aliphatic P aliphatic aliphatic aliphatic G aliphatic aliphatic aliphatic
+ aromatic aliphatic P aliphatic aliphatic aliphatic G aliphatic aliphatic A
+ aromatic aliphatic P aliphatic aliphatic aliphatic aliphatic aliphatic A
+ aromatic S aliphatic G basic
+ aromatic S aliphatic G K
+ aromatic neutral aliphatic G basic
+ aromatic neutral aliphatic G K
+ T L L K K V aliphatic
+ T L L K K V L
+ T L L K K V L basic
+ T L L K K V L K
+ T L L K K V aliphatic basic
+ T L L K K V aliphatic K
+ T L L K K aliphatic aliphatic
+ T L L K K aliphatic L
+ T L L K K aliphatic L basic
+ T L L K K aliphatic L K
+ T L L K K aliphatic aliphatic basic
+ T L L K K aliphatic aliphatic K
+ T L L K basic V L
+ T L L K basic V L basic
+ T L L K basic V L K
+ T L L basic K V aliphatic
+ T L L basic K V L
+ T L L basic K V L basic
+ T L L basic K V L K
+ T L L basic K V aliphatic basic
+ T L L basic K V aliphatic K
+ T L L basic K aliphatic aliphatic
+ T L L basic K aliphatic L
+ T L L basic K aliphatic L basic
+ T L L basic K aliphatic L K
+ T L L basic K aliphatic aliphatic basic
+ T L L basic K aliphatic aliphatic K
+ T L L basic basic V L
+ T L L basic basic V L basic
+ T L L basic basic V L K
+ T L aliphatic K K V aliphatic
+ T L aliphatic K K V L
+ T L aliphatic K K V L basic
+ T L aliphatic K K V L K
+ T L aliphatic K K V aliphatic basic
+ T L aliphatic K K V aliphatic K
+ T L aliphatic K K aliphatic aliphatic
+ T L aliphatic K K aliphatic L
+ T L aliphatic K K aliphatic L basic
+ T L aliphatic K K aliphatic L K
+ T L aliphatic K K aliphatic aliphatic basic
+ T L aliphatic K K aliphatic aliphatic K
+ T L aliphatic K basic V L
+ T L aliphatic K basic V L basic
+ T L aliphatic K basic V L K
+ T L aliphatic basic K V aliphatic
+ T L aliphatic basic K V L
+ T L aliphatic basic K V L basic
+ T L aliphatic basic K V L K
+ T L aliphatic basic K V aliphatic basic
+ T L aliphatic basic K V aliphatic K
+ T L aliphatic basic K aliphatic aliphatic
+ T L aliphatic basic K aliphatic L
+ T L aliphatic basic K aliphatic L basic
+ T L aliphatic basic K aliphatic L K
+ T L aliphatic basic K aliphatic aliphatic basic
+ T L aliphatic basic K aliphatic aliphatic K
+ T L aliphatic basic basic V L
+ T L aliphatic basic basic V L basic
+ T L aliphatic basic basic V L K
+ T aliphatic L K K V aliphatic
+ T aliphatic L K K V L
+ T aliphatic L K K V L basic
+ T aliphatic L K K V L K
+ T aliphatic L K K V aliphatic basic
+ T aliphatic L K K V aliphatic K
+ T aliphatic L K K aliphatic aliphatic
+ T aliphatic L K K aliphatic L
+ T aliphatic L K K aliphatic L basic
+ T aliphatic L K K aliphatic L K
+ T aliphatic L K K aliphatic aliphatic basic
+ T aliphatic L K K aliphatic aliphatic K
+ T aliphatic L K basic V L
+ T aliphatic L K basic V L basic
+ T aliphatic L K basic V L K
+ T aliphatic L basic K V aliphatic
+ T aliphatic L basic K V L
+ T aliphatic L basic K V L basic
+ T aliphatic L basic K V L K
+ T aliphatic L basic K V aliphatic basic
+ T aliphatic L basic K V aliphatic K
+ T aliphatic L basic K aliphatic aliphatic
+ T aliphatic L basic K aliphatic L
+ T aliphatic L basic K aliphatic L basic
+ T aliphatic L basic K aliphatic L K
+ T aliphatic L basic K aliphatic aliphatic basic
+ T aliphatic L basic K aliphatic aliphatic K
+ T aliphatic L basic basic V L
+ T aliphatic L basic basic V L basic
+ T aliphatic L basic basic V L K
+ T aliphatic aliphatic K K V aliphatic
+ T aliphatic aliphatic K K V L
+ T aliphatic aliphatic K K V L basic
+ T aliphatic aliphatic K K V L K
+ T aliphatic aliphatic K K V aliphatic basic
+ T aliphatic aliphatic K K V aliphatic K
+ T aliphatic aliphatic K K aliphatic aliphatic
+ T aliphatic aliphatic K K aliphatic L
+ T aliphatic aliphatic K K aliphatic L basic
+ T aliphatic aliphatic K K aliphatic L K
+ T aliphatic aliphatic K K aliphatic aliphatic basic
+ T aliphatic aliphatic K K aliphatic aliphatic K
+ T aliphatic aliphatic K basic V L
+ T aliphatic aliphatic K basic V L basic
+ T aliphatic aliphatic K basic V L K
+ T aliphatic aliphatic basic K V aliphatic
+ T aliphatic aliphatic basic K V L
+ T aliphatic aliphatic basic K V L basic
+ T aliphatic aliphatic basic K V L K
+ T aliphatic aliphatic basic K V aliphatic basic
+ T aliphatic aliphatic basic K V aliphatic K
+ T aliphatic aliphatic basic K aliphatic aliphatic
+ T aliphatic aliphatic basic K aliphatic L
+ T aliphatic aliphatic basic K aliphatic L basic
+ T aliphatic aliphatic basic K aliphatic L K
+ T aliphatic aliphatic basic K aliphatic aliphatic basic
+ T aliphatic aliphatic basic K aliphatic aliphatic K
+ T aliphatic aliphatic basic basic V L
+ T aliphatic aliphatic basic basic V L basic
+ T aliphatic aliphatic basic basic V L K
+ neutral L L K K V aliphatic
+ neutral L L K K V L
+ neutral L L K K V L basic
+ neutral L L K K V L K
+ neutral L L K K V aliphatic basic
+ neutral L L K K V aliphatic K
+ neutral L L K basic V L
+ neutral L L K basic V L basic
+ neutral L L K basic V L K
+ neutral L L basic K V aliphatic
+ neutral L L basic K V L
+ neutral L L basic K V L basic
+ neutral L L basic K V L K
+ neutral L L basic K V aliphatic basic
+ neutral L L basic K V aliphatic K
+ neutral L L basic basic V L
+ neutral L L basic basic V L basic
+ neutral L L basic basic V L K
+ neutral L aliphatic K K V aliphatic
+ neutral L aliphatic K K V L
+ neutral L aliphatic K K V L basic
+ neutral L aliphatic K K V L K
+ neutral L aliphatic K K V aliphatic basic
+ neutral L aliphatic K K V aliphatic K
+ neutral L aliphatic K basic V L
+ neutral L aliphatic K basic V L basic
+ neutral L aliphatic K basic V L K
+ neutral L aliphatic basic K V aliphatic
+ neutral L aliphatic basic K V L
+ neutral L aliphatic basic K V L basic
+ neutral L aliphatic basic K V L K
+ neutral L aliphatic basic K V aliphatic basic
+ neutral L aliphatic basic K V aliphatic K
+ neutral L aliphatic basic K aliphatic L basic aliphatic
+ neutral L aliphatic basic K aliphatic L basic A
+ neutral L aliphatic basic K aliphatic aliphatic basic aliphatic
+ neutral L aliphatic basic K aliphatic aliphatic basic A
+ neutral L aliphatic basic basic V L
+ neutral L aliphatic basic basic V L basic
+ neutral L aliphatic basic basic V L K
+ neutral L aliphatic basic basic aliphatic L basic aliphatic
+ neutral L aliphatic basic basic aliphatic L basic A
+ neutral aliphatic L K K V L K aliphatic
+ neutral aliphatic L K K V L basic aliphatic
+ neutral aliphatic L K K V aliphatic K aliphatic
+ neutral aliphatic L K K V aliphatic basic aliphatic
+ neutral aliphatic L K K aliphatic L K aliphatic
+ neutral aliphatic L K K aliphatic L basic aliphatic
+ neutral aliphatic L K basic V L K aliphatic
+ neutral aliphatic L K basic V L basic aliphatic
+ neutral aliphatic L K basic aliphatic L K aliphatic
+ neutral aliphatic L K basic aliphatic L basic aliphatic
+ neutral aliphatic L basic K V L K aliphatic
+ neutral aliphatic L basic K V L basic aliphatic
+ neutral aliphatic L basic K V aliphatic K aliphatic
+ neutral aliphatic L basic K V aliphatic basic aliphatic
+ neutral aliphatic L basic K aliphatic L K aliphatic
+ neutral aliphatic L basic K aliphatic L basic aliphatic
+ neutral aliphatic L basic basic V L K aliphatic
+ neutral aliphatic L basic basic V L basic aliphatic
+ neutral aliphatic L basic basic aliphatic L K aliphatic
+ neutral aliphatic L basic basic aliphatic L basic aliphatic
+ neutral aliphatic aliphatic K K V L K aliphatic
+ neutral aliphatic aliphatic K K V L basic aliphatic
+ neutral aliphatic aliphatic K K V aliphatic K aliphatic
+ neutral aliphatic aliphatic K K V aliphatic basic aliphatic
+ neutral aliphatic aliphatic K K aliphatic L K aliphatic
+ neutral aliphatic aliphatic K K aliphatic L basic aliphatic
+ neutral aliphatic aliphatic K basic V L K aliphatic
+ neutral aliphatic aliphatic K basic V L basic aliphatic
+ neutral aliphatic aliphatic K basic aliphatic L K aliphatic
+ neutral aliphatic aliphatic K basic aliphatic L basic aliphatic
+ neutral aliphatic aliphatic basic K V L K aliphatic
+ neutral aliphatic aliphatic basic K V L basic aliphatic
+ neutral aliphatic aliphatic basic K V aliphatic K aliphatic
+ neutral aliphatic aliphatic basic K V aliphatic basic aliphatic
+ neutral aliphatic aliphatic basic K aliphatic L K aliphatic
+ neutral aliphatic aliphatic basic K aliphatic L basic A
+ neutral aliphatic aliphatic basic K aliphatic aliphatic basic A
+ neutral aliphatic aliphatic basic basic V L K aliphatic
+ neutral aliphatic aliphatic basic basic V L basic aliphatic
+ neutral aliphatic aliphatic basic basic aliphatic L K aliphatic
+ neutral aliphatic aliphatic basic basic aliphatic L basic A
+ K aliphatic L K A aliphatic aliphatic basic
+ K aliphatic L K A aliphatic aliphatic K
+ K aliphatic L basic A aliphatic aliphatic basic
+ K aliphatic L basic A aliphatic aliphatic K
+ basic aliphatic L K A aliphatic aliphatic basic
+ basic aliphatic L K A aliphatic aliphatic K
+ basic aliphatic L basic A aliphatic aliphatic basic
+ basic aliphatic L basic A aliphatic aliphatic K
+ basic basic aliphatic aliphatic aliphatic G aliphatic
+ P aliphatic aliphatic aliphatic G aliphatic A
+ P aliphatic aliphatic aliphatic G aliphatic aliphatic A
+ P aliphatic aliphatic aliphatic aliphatic aliphatic A
