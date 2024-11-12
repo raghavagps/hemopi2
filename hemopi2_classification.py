@@ -358,17 +358,14 @@ def Merci_after_processing_n(wd, merci_processed, final_merci_n):
     df5 = df5[['SeqID', 'MERCI Score Neg']]
     df5.to_csv(f"{wd}/{final_merci_n}", index=None)
 
-def hybrid(wd, df3, merci_output_p, merci_output_n, merci_hybrid_p, merci_hybrid_n, threshold, final_output):
+def hybrid(wd, df3, merci_hybrid_p_1, merci_hybrid_n_1, merci_hybrid_p_2, merci_hybrid_n_2, threshold, final_output):
     df6_2 = df3.copy()
     df6_2['SeqID'] = df6_2['SeqID'].str.replace('>', '', regex=False)
     df6 = df6_2[['SeqID', 'Seq', 'ML Score']]
-
-    df4 = pd.read_csv(f"{wd}/{merci_output_p}", dtype={'Subject': object, 'MERCI Score Pos': np.float64})
-    df4 = df4[['SeqID', 'PHits']]
-    df5 = pd.read_csv(f"{wd}/{merci_output_n}", dtype={'Subject': object, 'MERCI Score Neg': np.float64})
-    df5 = df5[['SeqID', 'NHits']]
-    df7 = pd.read_csv(f"{wd}/{merci_hybrid_p}", dtype={'Subject': object, 'MERCI Score Pos': np.float64})
-    df8 = pd.read_csv(f"{wd}/{merci_hybrid_n}", dtype={'Subject': object, 'MERCI Score Neg': np.float64})
+    df4 = pd.read_csv(f"{wd}/{merci_hybrid_p_1}",names= ['SeqID', 'MERCI Score 1 Pos'], header=0, dtype={'Subject': object, 'MERCI Score Pos': np.float64})
+    df5 = pd.read_csv(f"{wd}/{merci_hybrid_n_1}",names= ['SeqID', 'MERCI Score 1 Neg'], header=0, dtype={'Subject': object, 'MERCI Score Neg': np.float64})
+    df7 = pd.read_csv(f"{wd}/{merci_hybrid_p_2}",names= ['SeqID', 'MERCI Score 2 Pos'], header=0, dtype={'Subject': object, 'MERCI Score Pos': np.float64})
+    df8 = pd.read_csv(f"{wd}/{merci_hybrid_n_2}",names= ['SeqID', 'MERCI Score 2 Neg'], header=0, dtype={'Subject': object, 'MERCI Score Neg': np.float64})
     
     df9 = pd.merge(df6, df4, how='outer', on='SeqID')
     df10 = pd.merge(df9, df5, how='outer', on='SeqID')
@@ -376,9 +373,9 @@ def hybrid(wd, df3, merci_output_p, merci_output_n, merci_hybrid_p, merci_hybrid
     df12 = pd.merge(df11, df8, how='outer', on='SeqID')
     
     df12.fillna(0, inplace=True)
-    df12['MERCI Score'] = df12[['MERCI Score Pos', 'MERCI Score Neg']].sum(axis=1)
+    df12['MERCI Score'] = df12[['MERCI Score 1 Pos', 'MERCI Score 1 Neg', 'MERCI Score 2 Pos', 'MERCI Score 2 Neg']].sum(axis=1)
     df12['Hybrid Score'] = df12[['ML Score', 'MERCI Score']].sum(axis=1)
-    df12.drop(columns=['PHits', 'NHits', 'MERCI Score Pos', 'MERCI Score Neg'], inplace=True)
+    df12.drop(columns=['MERCI Score 1 Pos', 'MERCI Score 1 Neg', 'MERCI Score 2 Pos', 'MERCI Score 2 Neg'], inplace=True)
     df12 = df12.round(3)
     
     ee = []
@@ -445,8 +442,17 @@ if args.model is None:
 else:
     Model = args.model
 
-position = args.Position
-residues = args.Residues
+if args.Position is None:
+    position = 1
+else:
+    position = args.Position
+
+
+if args.Residues is None:
+    residues = "AA"
+else:
+    residues = args.Residues
+
 
 
 
@@ -539,15 +545,24 @@ if Job == 1:
         df3.rename(columns={0: 'SeqID'}, inplace=True)
         #### Adding MERCI
         merci = './merci/MERCI_motif_locator.pl'
-        motifs_p = './motif/pos_motif.txt'
-        motifs_n = './motif/neg_motif.txt'
-        os.system(f"perl {merci} -p {wd}/Sequence_1 -i {motifs_p} -o {wd}/merci_p.txt")
-        os.system(f"perl {merci} -p {wd}/Sequence_1 -i {motifs_n} -o {wd}/merci_n.txt")
-        MERCI_Processor_p(wd, 'merci_p.txt', '/merci_output_p.csv', df_2)
-        Merci_after_processing_p(wd, '/merci_output_p.csv', '/merci_hybrid_p.csv')
-        MERCI_Processor_n(wd, '/merci_n.txt', '/merci_output_n.csv', df_2)
-        Merci_after_processing_n(wd, '/merci_output_n.csv', '/merci_hybrid_n.csv')
-        hybrid(wd, df3, '/merci_output_p.csv', '/merci_output_n.csv', '/merci_hybrid_p.csv', '/merci_hybrid_n.csv', threshold, '/final_output')
+        motifs_p_1 = './motif/pos_motif_1.txt'
+        motifs_n_1 = './motif/neg_motif_1.txt'
+        motifs_p_2 = './motif/pos_motif_2.txt'
+        motifs_n_2 = './motif/neg_motif_2.txt'
+        os.system(f"perl {merci} -p {wd}/Sequence_1 -i {motifs_p_1} -o {wd}/merci_p_1.txt")
+        os.system(f"perl {merci} -p {wd}/Sequence_1 -i {motifs_n_1} -o {wd}/merci_n_1.txt")
+        os.system(f"perl {merci} -p {wd}/Sequence_1 -i {motifs_p_2} -c KOOLMAN-ROHM -o {wd}/merci_p_2.txt")
+        os.system(f"perl {merci} -p {wd}/Sequence_1 -i {motifs_n_2} -c KOOLMAN-ROHM -o {wd}/merci_n_2.txt")
+        MERCI_Processor_p(wd, 'merci_p_1.txt', '/merci_output_p_1.csv', df_2)
+        MERCI_Processor_p(wd, 'merci_p_2.txt', '/merci_output_p_2.csv', df_2)
+        Merci_after_processing_p(wd, '/merci_output_p_1.csv', '/merci_hybrid_p_1.csv')
+        Merci_after_processing_p(wd, '/merci_output_p_2.csv', '/merci_hybrid_p_2.csv')
+        MERCI_Processor_n(wd, '/merci_n_1.txt', '/merci_output_n_1.csv', df_2)
+        MERCI_Processor_n(wd, '/merci_n_2.txt', '/merci_output_n_2.csv', df_2)
+        Merci_after_processing_n(wd, '/merci_output_n_1.csv', '/merci_hybrid_n_1.csv')
+        Merci_after_processing_n(wd, '/merci_output_n_2.csv', '/merci_hybrid_n_2.csv')
+
+        hybrid(wd, df3, '/merci_hybrid_p_1.csv', '/merci_hybrid_n_1.csv', '/merci_hybrid_p_2.csv', '/merci_hybrid_n_2.csv', threshold, '/final_output')
 
         df12 = pd.read_csv(f'{wd}/final_output')
         df12.loc[df12['Hybrid Score'] > 1, 'Hybrid Score'] = 1
@@ -566,12 +581,18 @@ if Job == 1:
 
         # Clean up temporary files used by Model 2
         os.remove(f'{wd}/final_output')
-        os.remove(f'{wd}/merci_hybrid_p.csv')
-        os.remove(f'{wd}/merci_hybrid_n.csv')
-        os.remove(f'{wd}/merci_output_p.csv')
-        os.remove(f'{wd}/merci_output_n.csv')
-        os.remove(f'{wd}/merci_p.txt')
-        os.remove(f'{wd}/merci_n.txt')
+        os.remove(f'{wd}/merci_hybrid_p_1.csv')
+        os.remove(f'{wd}/merci_hybrid_n_1.csv')
+        os.remove(f'{wd}/merci_output_p_1.csv')
+        os.remove(f'{wd}/merci_output_n_1.csv')
+        os.remove(f'{wd}/merci_hybrid_p_2.csv')
+        os.remove(f'{wd}/merci_hybrid_n_2.csv')
+        os.remove(f'{wd}/merci_output_p_2.csv')
+        os.remove(f'{wd}/merci_output_n_2.csv')
+        os.remove(f'{wd}/merci_p_1.txt')
+        os.remove(f'{wd}/merci_n_1.txt')
+        os.remove(f'{wd}/merci_p_2.txt')
+        os.remove(f'{wd}/merci_n_2.txt')
         os.remove(f'{wd}/Sequence_1')
         os.remove(f'{wd}/out_len')
         os.remove(f'{wd}/out2')
@@ -621,15 +642,24 @@ if Job == 1:
         df3 = pd.read_csv(f"{wd}/{result_filename}")
         ###Adding merci
         merci = './merci/MERCI_motif_locator.pl'
-        motifs_p = './motif/pos_motif.txt'
-        motifs_n = './motif/neg_motif.txt'
-        os.system(f"perl {merci} -p {wd}/Sequence_1 -i {motifs_p} -o {wd}/merci_p.txt")
-        os.system(f"perl {merci} -p {wd}/Sequence_1 -i {motifs_n} -o {wd}/merci_n.txt")
-        MERCI_Processor_p(wd, 'merci_p.txt', '/merci_output_p.csv', seqid)
-        Merci_after_processing_p(wd, '/merci_output_p.csv', '/merci_hybrid_p.csv')
-        MERCI_Processor_n(wd, '/merci_n.txt', '/merci_output_n.csv', seqid)
-        Merci_after_processing_n(wd, '/merci_output_n.csv', '/merci_hybrid_n.csv')
-        hybrid(wd, df3, '/merci_output_p.csv', '/merci_output_n.csv', '/merci_hybrid_p.csv', '/merci_hybrid_n.csv', threshold, '/final_output')
+        motifs_p_1 = './motif/pos_motif_1.txt'
+        motifs_n_1 = './motif/neg_motif_1.txt'
+        motifs_p_2 = './motif/pos_motif_2.txt'
+        motifs_n_2 = './motif/neg_motif_2.txt'
+        os.system(f"perl {merci} -p {wd}/Sequence_1 -i {motifs_p_1} -o {wd}/merci_p_1.txt")
+        os.system(f"perl {merci} -p {wd}/Sequence_1 -i {motifs_n_1} -o {wd}/merci_n_1.txt")
+        os.system(f"perl {merci} -p {wd}/Sequence_1 -i {motifs_p_2} -c KOOLMAN-ROHM -o {wd}/merci_p_2.txt")
+        os.system(f"perl {merci} -p {wd}/Sequence_1 -i {motifs_n_2} -c KOOLMAN-ROHM -o {wd}/merci_n_2.txt")
+        MERCI_Processor_p(wd, 'merci_p_1.txt', '/merci_output_p_1.csv', seqid)
+        MERCI_Processor_p(wd, 'merci_p_2.txt', '/merci_output_p_2.csv', seqid)
+        Merci_after_processing_p(wd, '/merci_output_p_1.csv', '/merci_hybrid_p_1.csv')
+        Merci_after_processing_p(wd, '/merci_output_p_2.csv', '/merci_hybrid_p_2.csv')
+        MERCI_Processor_n(wd, '/merci_n_1.txt', '/merci_output_n_1.csv', seqid)
+        MERCI_Processor_n(wd, '/merci_n_2.txt', '/merci_output_n_2.csv', seqid)
+        Merci_after_processing_n(wd, '/merci_output_n_1.csv', '/merci_hybrid_n_1.csv')
+        Merci_after_processing_n(wd, '/merci_output_n_2.csv', '/merci_hybrid_n_2.csv')
+
+        hybrid(wd, df3, '/merci_hybrid_p_1.csv', '/merci_hybrid_n_1.csv', '/merci_hybrid_p_2.csv', '/merci_hybrid_n_2.csv', threshold, '/final_output')
         df14 = pd.read_csv(f'{wd}/final_output')
         df14.loc[df14['Hybrid Score'] > 1, 'Hybrid Score'] = 1
         df14.loc[df14['Hybrid Score'] < 0, 'Hybrid Score'] = 0
@@ -647,12 +677,18 @@ if Job == 1:
 
         # Clean up temporary files used by Model 4
         os.remove(f'{wd}/final_output')
-        os.remove(f'{wd}/merci_hybrid_p.csv')
-        os.remove(f'{wd}/merci_hybrid_n.csv')
-        os.remove(f'{wd}/merci_output_p.csv')
-        os.remove(f'{wd}/merci_output_n.csv')
-        os.remove(f'{wd}/merci_p.txt')
-        os.remove(f'{wd}/merci_n.txt')
+        os.remove(f'{wd}/merci_hybrid_p_1.csv')
+        os.remove(f'{wd}/merci_hybrid_n_1.csv')
+        os.remove(f'{wd}/merci_output_p_1.csv')
+        os.remove(f'{wd}/merci_output_n_1.csv')
+        os.remove(f'{wd}/merci_hybrid_p_2.csv')
+        os.remove(f'{wd}/merci_hybrid_n_2.csv')
+        os.remove(f'{wd}/merci_output_p_2.csv')
+        os.remove(f'{wd}/merci_output_n_2.csv')
+        os.remove(f'{wd}/merci_p_1.txt')
+        os.remove(f'{wd}/merci_n_1.txt')
+        os.remove(f'{wd}/merci_p_2.txt')
+        os.remove(f'{wd}/merci_n_2.txt')
         os.remove(f'{wd}/Sequence_1')
         os.remove(f'{wd}/out_len')
         
@@ -706,15 +742,25 @@ if Job == 2:
         df32.rename(columns={0: 'SeqID'}, inplace=True)
         ####Adding merci
         merci = './merci/MERCI_motif_locator.pl'
-        motifs_p = './motif/pos_motif.txt'
-        motifs_n = './motif/neg_motif.txt'
-        os.system(f"perl {merci} -p {wd}/Sequence_1 -i {motifs_p} -o {wd}/merci_p.txt")
-        os.system(f"perl {merci} -p {wd}/Sequence_1 -i {motifs_n} -o {wd}/merci_n.txt")
-        MERCI_Processor_p(wd, 'merci_p.txt', '/merci_output_p.csv', seqid)
-        Merci_after_processing_p(wd, '/merci_output_p.csv', '/merci_hybrid_p.csv')
-        MERCI_Processor_n(wd, '/merci_n.txt', '/merci_output_n.csv', seqid)
-        Merci_after_processing_n(wd, '/merci_output_n.csv', '/merci_hybrid_n.csv')
-        hybrid(wd, df32,'/merci_output_p.csv', '/merci_output_n.csv', '/merci_hybrid_p.csv', '/merci_hybrid_n.csv', threshold, '/final_output')
+        motifs_p_1 = './motif/pos_motif_1.txt'
+        motifs_n_1 = './motif/neg_motif_1.txt'
+        motifs_p_2 = './motif/pos_motif_2.txt'
+        motifs_n_2 = './motif/neg_motif_2.txt'
+        os.system(f"perl {merci} -p {wd}/Sequence_1 -i {motifs_p_1} -o {wd}/merci_p_1.txt")
+        os.system(f"perl {merci} -p {wd}/Sequence_1 -i {motifs_n_1} -o {wd}/merci_n_1.txt")
+        os.system(f"perl {merci} -p {wd}/Sequence_1 -i {motifs_p_2} -c KOOLMAN-ROHM -o {wd}/merci_p_2.txt")
+        os.system(f"perl {merci} -p {wd}/Sequence_1 -i {motifs_n_2} -c KOOLMAN-ROHM -o {wd}/merci_n_2.txt")
+        MERCI_Processor_p(wd, 'merci_p_1.txt', '/merci_output_p_1.csv', seqid)
+        MERCI_Processor_p(wd, 'merci_p_2.txt', '/merci_output_p_2.csv', seqid)
+        Merci_after_processing_p(wd, '/merci_output_p_1.csv', '/merci_hybrid_p_1.csv')
+        Merci_after_processing_p(wd, '/merci_output_p_2.csv', '/merci_hybrid_p_2.csv')
+        MERCI_Processor_n(wd, '/merci_n_1.txt', '/merci_output_n_1.csv', seqid)
+        MERCI_Processor_n(wd, '/merci_n_2.txt', '/merci_output_n_2.csv', seqid)
+        Merci_after_processing_n(wd, '/merci_output_n_1.csv', '/merci_hybrid_n_1.csv')
+        Merci_after_processing_n(wd, '/merci_output_n_2.csv', '/merci_hybrid_n_2.csv')
+
+        hybrid(wd, df32, '/merci_hybrid_p_1.csv', '/merci_hybrid_n_1.csv', '/merci_hybrid_p_2.csv', '/merci_hybrid_n_2.csv', threshold, '/final_output')
+
         df32 = pd.read_csv(f'{wd}/final_output')
         df32.loc[df32['Hybrid Score'] > 1, 'Hybrid Score'] = 1
         df32.loc[df32['Hybrid Score'] < 0, 'Hybrid Score'] = 0
@@ -734,12 +780,18 @@ if Job == 2:
 
         # Clean up temporary files used by Model 4
         os.remove(f'{wd}/final_output')
-        os.remove(f'{wd}/merci_hybrid_p.csv')
-        os.remove(f'{wd}/merci_hybrid_n.csv')
-        os.remove(f'{wd}/merci_output_p.csv')
-        os.remove(f'{wd}/merci_output_n.csv')
-        os.remove(f'{wd}/merci_p.txt')
-        os.remove(f'{wd}/merci_n.txt')
+        os.remove(f'{wd}/merci_hybrid_p_1.csv')
+        os.remove(f'{wd}/merci_hybrid_n_1.csv')
+        os.remove(f'{wd}/merci_output_p_1.csv')
+        os.remove(f'{wd}/merci_output_n_1.csv')
+        os.remove(f'{wd}/merci_hybrid_p_2.csv')
+        os.remove(f'{wd}/merci_hybrid_n_2.csv')
+        os.remove(f'{wd}/merci_output_p_2.csv')
+        os.remove(f'{wd}/merci_output_n_2.csv')
+        os.remove(f'{wd}/merci_p_1.txt')
+        os.remove(f'{wd}/merci_n_1.txt')
+        os.remove(f'{wd}/merci_p_2.txt')
+        os.remove(f'{wd}/merci_n_2.txt')
         os.remove(f'{wd}/Sequence_1')
         os.remove(f'{wd}/out_len')
         os.remove(f'{wd}/out4')
@@ -798,15 +850,25 @@ if Job == 2:
 
         ###Adding merci
         merci = './merci/MERCI_motif_locator.pl'
-        motifs_p = './motif/pos_motif.txt'
-        motifs_n = './motif/neg_motif.txt'
-        os.system(f"perl {merci} -p {wd}/Sequence_1 -i {motifs_p} -o {wd}/merci_p.txt")
-        os.system(f"perl {merci} -p {wd}/Sequence_1 -i {motifs_n} -o {wd}/merci_n.txt")
-        MERCI_Processor_p(wd, 'merci_p.txt', '/merci_output_p.csv', seqid)
-        Merci_after_processing_p(wd, '/merci_output_p.csv', '/merci_hybrid_p.csv')
-        MERCI_Processor_n(wd, '/merci_n.txt', '/merci_output_n.csv', seqid)
-        Merci_after_processing_n(wd, '/merci_output_n.csv', '/merci_hybrid_n.csv')
-        hybrid(wd, df33,'/merci_output_p.csv', '/merci_output_n.csv', '/merci_hybrid_p.csv', '/merci_hybrid_n.csv', threshold, '/final_output')
+        motifs_p_1 = './motif/pos_motif_1.txt'
+        motifs_n_1 = './motif/neg_motif_1.txt'
+        motifs_p_2 = './motif/pos_motif_2.txt'
+        motifs_n_2 = './motif/neg_motif_2.txt'
+        os.system(f"perl {merci} -p {wd}/Sequence_1 -i {motifs_p_1} -o {wd}/merci_p_1.txt")
+        os.system(f"perl {merci} -p {wd}/Sequence_1 -i {motifs_n_1} -o {wd}/merci_n_1.txt")
+        os.system(f"perl {merci} -p {wd}/Sequence_1 -i {motifs_p_2} -c KOOLMAN-ROHM -o {wd}/merci_p_2.txt")
+        os.system(f"perl {merci} -p {wd}/Sequence_1 -i {motifs_n_2} -c KOOLMAN-ROHM -o {wd}/merci_n_2.txt")
+        MERCI_Processor_p(wd, 'merci_p_1.txt', '/merci_output_p_1.csv', seqid)
+        MERCI_Processor_p(wd, 'merci_p_2.txt', '/merci_output_p_2.csv', seqid)
+        Merci_after_processing_p(wd, '/merci_output_p_1.csv', '/merci_hybrid_p_1.csv')
+        Merci_after_processing_p(wd, '/merci_output_p_2.csv', '/merci_hybrid_p_2.csv')
+        MERCI_Processor_n(wd, '/merci_n_1.txt', '/merci_output_n_1.csv', seqid)
+        MERCI_Processor_n(wd, '/merci_n_2.txt', '/merci_output_n_2.csv', seqid)
+        Merci_after_processing_n(wd, '/merci_output_n_1.csv', '/merci_hybrid_n_1.csv')
+        Merci_after_processing_n(wd, '/merci_output_n_2.csv', '/merci_hybrid_n_2.csv')
+
+        hybrid(wd, df33, '/merci_hybrid_p_1.csv', '/merci_hybrid_n_1.csv', '/merci_hybrid_p_2.csv', '/merci_hybrid_n_2.csv', threshold, '/final_output')
+
         df43 = pd.read_csv(f'{wd}/final_output')
         df43.loc[df43['Hybrid Score'] > 1, 'Hybrid Score'] = 1
         df43.loc[df43['Hybrid Score'] < 0, 'Hybrid Score'] = 0
@@ -827,12 +889,18 @@ if Job == 2:
 
         # Clean up temporary files used by Model 4
         os.remove(f'{wd}/final_output')
-        os.remove(f'{wd}/merci_hybrid_p.csv')
-        os.remove(f'{wd}/merci_hybrid_n.csv')
-        os.remove(f'{wd}/merci_output_p.csv')
-        os.remove(f'{wd}/merci_output_n.csv')
-        os.remove(f'{wd}/merci_p.txt')
-        os.remove(f'{wd}/merci_n.txt')
+        os.remove(f'{wd}/merci_hybrid_p_1.csv')
+        os.remove(f'{wd}/merci_hybrid_n_1.csv')
+        os.remove(f'{wd}/merci_output_p_1.csv')
+        os.remove(f'{wd}/merci_output_n_1.csv')
+        os.remove(f'{wd}/merci_hybrid_p_2.csv')
+        os.remove(f'{wd}/merci_hybrid_n_2.csv')
+        os.remove(f'{wd}/merci_output_p_2.csv')
+        os.remove(f'{wd}/merci_output_n_2.csv')
+        os.remove(f'{wd}/merci_p_1.txt')
+        os.remove(f'{wd}/merci_n_1.txt')
+        os.remove(f'{wd}/merci_p_2.txt')
+        os.remove(f'{wd}/merci_n_2.txt')
         os.remove(f'{wd}/Sequence_1')
         os.remove(f'{wd}/out_len')
         
@@ -844,8 +912,6 @@ if Job == 3:
         print('==== Designing Peptides: Processing sequences please wait ...')
         df_2, dfseq = readseq(Sequence)
         df1, output_len_file = lenchk(dfseq, wd)
-
-
         mutants = generate_mutants_from_dataframe(df1, residues, position)
         result_df = pd.DataFrame(mutants, columns=['Original Sequence', 'Mutant Sequence', 'Position'])
         result_df['Mutant Sequence'].to_csv(f'{wd}/out_len_mut', index=None, header=None)
@@ -874,7 +940,7 @@ if Job == 3:
         os.remove(f'{wd}/out3')
         os.remove(f'{wd}/out33')
         os.remove(f'{wd}/Sequence_1')
-    
+        
     elif Model == 2:
         print('\n======= Thanks for using Design module of HemoPI2.0. Your results will be stored in file :'f"{wd}/{result_filename}"' =====\n')
         print('==== Designing Peptides: Processing sequences please wait ...')
@@ -883,6 +949,8 @@ if Job == 3:
         mutants = generate_mutants_from_dataframe(df1, residues, position)
         result_df = pd.DataFrame(mutants, columns=['Original Sequence', 'Mutant Sequence', 'Position'])
         result_df['Mutant Sequence'].to_csv(f'{wd}/out_len_mut', index=None, header=None)
+        result_df['Seq'] = df_2
+        mutant_fasta = result_df[['Seq','Mutant Sequence']].to_csv(f'{wd}/mutant.fasta', index=None, header=None, sep='\n')
         os.system(f'python3 ./Model/composition_calculate.py {output_len_file} {wd} {wd}/out2')
         os.system(f'python3 ./Model/composition_calculate.py {wd}/out_len_mut {wd} {wd}/out3')
         mlres = ML_run(f'{wd}/out2', f'{wd}/out22', threshold)
@@ -896,15 +964,25 @@ if Job == 3:
         df221 = df22.iloc[:,:3]  #####original
         ###Adding merci
         merci = './merci/MERCI_motif_locator.pl'
-        motifs_p = './motif/pos_motif.txt'
-        motifs_n = './motif/neg_motif.txt'
-        os.system(f"perl {merci} -p {wd}/Sequence_1 -i {motifs_p} -o {wd}/merci_p.txt")
-        os.system(f"perl {merci} -p {wd}/Sequence_1 -i {motifs_n} -o {wd}/merci_n.txt")
-        MERCI_Processor_p(wd, 'merci_p.txt', '/merci_output_p.csv', seqid)
-        Merci_after_processing_p(wd, '/merci_output_p.csv', '/merci_hybrid_p.csv')
-        MERCI_Processor_n(wd, '/merci_n.txt', '/merci_output_n.csv', seqid)
-        Merci_after_processing_n(wd, '/merci_output_n.csv', '/merci_hybrid_n.csv')
-        hybrid(wd, df221,'/merci_output_p.csv', '/merci_output_n.csv', '/merci_hybrid_p.csv', '/merci_hybrid_n.csv', threshold, '/final_output')
+        motifs_p_1 = './motif/pos_motif_1.txt'
+        motifs_n_1 = './motif/neg_motif_1.txt'
+        motifs_p_2 = './motif/pos_motif_2.txt'
+        motifs_n_2 = './motif/neg_motif_2.txt'
+        os.system(f"perl {merci} -p {wd}/Sequence_1 -i {motifs_p_1} -o {wd}/merci_p_1.txt")
+        os.system(f"perl {merci} -p {wd}/Sequence_1 -i {motifs_n_1} -o {wd}/merci_n_1.txt")
+        os.system(f"perl {merci} -p {wd}/Sequence_1 -i {motifs_p_2} -c KOOLMAN-ROHM -o {wd}/merci_p_2.txt")
+        os.system(f"perl {merci} -p {wd}/Sequence_1 -i {motifs_n_2} -c KOOLMAN-ROHM -o {wd}/merci_n_2.txt")
+        MERCI_Processor_p(wd, 'merci_p_1.txt', '/merci_output_p_1.csv', df_2)
+        MERCI_Processor_p(wd, 'merci_p_2.txt', '/merci_output_p_2.csv', df_2)
+        Merci_after_processing_p(wd, '/merci_output_p_1.csv', '/merci_hybrid_p_1.csv')
+        Merci_after_processing_p(wd, '/merci_output_p_2.csv', '/merci_hybrid_p_2.csv')
+        MERCI_Processor_n(wd, '/merci_n_1.txt', '/merci_output_n_1.csv', df_2)
+        MERCI_Processor_n(wd, '/merci_n_2.txt', '/merci_output_n_2.csv', df_2)
+        Merci_after_processing_n(wd, '/merci_output_n_1.csv', '/merci_hybrid_n_1.csv')
+        Merci_after_processing_n(wd, '/merci_output_n_2.csv', '/merci_hybrid_n_2.csv')
+
+        hybrid(wd, df221, '/merci_hybrid_p_1.csv', '/merci_hybrid_n_1.csv', '/merci_hybrid_p_2.csv', '/merci_hybrid_n_2.csv', threshold, '/final_output')
+
         df221 = pd.read_csv(f'{wd}/final_output')
         df221.loc[df221['Hybrid Score'] > 1, 'Hybrid Score'] = 1
         df221.loc[df221['Hybrid Score'] < 0, 'Hybrid Score'] = 0
@@ -913,15 +991,25 @@ if Job == 3:
         df222 = df22.iloc[:, [0, 4, 6]]  ######mutants
         ###Adding merci
         merci = './merci/MERCI_motif_locator.pl'
-        motifs_p = './motif/pos_motif.txt'
-        motifs_n = './motif/neg_motif.txt'
-        os.system(f"perl {merci} -p {wd}/Sequence_1 -i {motifs_p} -o {wd}/merci_p.txt")
-        os.system(f"perl {merci} -p {wd}/Sequence_1 -i {motifs_n} -o {wd}/merci_n.txt")
-        MERCI_Processor_p(wd, 'merci_p.txt', '/merci_output_p.csv', seqid)
-        Merci_after_processing_p(wd, '/merci_output_p.csv', '/merci_hybrid_p.csv')
-        MERCI_Processor_n(wd, '/merci_n.txt', '/merci_output_n.csv', seqid)
-        Merci_after_processing_n(wd, '/merci_output_n.csv', '/merci_hybrid_n.csv')
-        hybrid(wd, df222,'/merci_output_p.csv', '/merci_output_n.csv', '/merci_hybrid_p.csv', '/merci_hybrid_n.csv', threshold, '/final_output')
+        motifs_p_1 = './motif/pos_motif_1.txt'
+        motifs_n_1 = './motif/neg_motif_1.txt'
+        motifs_p_2 = './motif/pos_motif_2.txt'
+        motifs_n_2 = './motif/neg_motif_2.txt'
+        os.system(f"perl {merci} -p {wd}/mutant.fasta -i {motifs_p_1} -o {wd}/merci_p_1.txt")
+        os.system(f"perl {merci} -p {wd}/mutant.fasta -i {motifs_n_1} -o {wd}/merci_n_1.txt")
+        os.system(f"perl {merci} -p {wd}/mutant.fasta -i {motifs_p_2} -c KOOLMAN-ROHM -o {wd}/merci_p_2.txt")
+        os.system(f"perl {merci} -p {wd}/mutant.fasta -i {motifs_n_2} -c KOOLMAN-ROHM -o {wd}/merci_n_2.txt")
+        MERCI_Processor_p(wd, 'merci_p_1.txt', '/merci_output_p_1.csv', df_2)
+        MERCI_Processor_p(wd, 'merci_p_2.txt', '/merci_output_p_2.csv', df_2)
+        Merci_after_processing_p(wd, '/merci_output_p_1.csv', '/merci_hybrid_p_1.csv')
+        Merci_after_processing_p(wd, '/merci_output_p_2.csv', '/merci_hybrid_p_2.csv')
+        MERCI_Processor_n(wd, '/merci_n_1.txt', '/merci_output_n_1.csv', df_2)
+        MERCI_Processor_n(wd, '/merci_n_2.txt', '/merci_output_n_2.csv', df_2)
+        Merci_after_processing_n(wd, '/merci_output_n_1.csv', '/merci_hybrid_n_1.csv')
+        Merci_after_processing_n(wd, '/merci_output_n_2.csv', '/merci_hybrid_n_2.csv')
+
+        hybrid(wd, df222, '/merci_hybrid_p_1.csv', '/merci_hybrid_n_1.csv', '/merci_hybrid_p_2.csv', '/merci_hybrid_n_2.csv', threshold, '/final_output')
+
         df222 = pd.read_csv(f'{wd}/final_output')
         df222.loc[df222['Hybrid Score'] > 1, 'Hybrid Score'] = 1
         df222.loc[df222['Hybrid Score'] < 0, 'Hybrid Score'] = 0
@@ -933,8 +1021,6 @@ if Job == 3:
         df223_part2 = df223.iloc[:, 7:]
         df223 = pd.concat([df223_part1, result_df["Position"], df223_part2], axis=1)
 
-
-
         if dplay == 1:
             df223 = df223.loc[df223.Prediction == "Hemolytic"]
             print(df223)
@@ -945,12 +1031,19 @@ if Job == 3:
 
         #Clean up temporary files used by Model 2
         os.remove(f'{wd}/final_output')
-        os.remove(f'{wd}/merci_hybrid_p.csv')
-        os.remove(f'{wd}/merci_hybrid_n.csv')
-        os.remove(f'{wd}/merci_output_p.csv')
-        os.remove(f'{wd}/merci_output_n.csv')
-        os.remove(f'{wd}/merci_p.txt')
-        os.remove(f'{wd}/merci_n.txt')
+        os.remove(f'{wd}/merci_hybrid_p_1.csv')
+        os.remove(f'{wd}/merci_hybrid_n_1.csv')
+        os.remove(f'{wd}/merci_output_p_1.csv')
+        os.remove(f'{wd}/merci_output_n_1.csv')
+        os.remove(f'{wd}/merci_hybrid_p_2.csv')
+        os.remove(f'{wd}/merci_hybrid_n_2.csv')
+        os.remove(f'{wd}/merci_output_p_2.csv')
+        os.remove(f'{wd}/merci_output_n_2.csv')
+        os.remove(f'{wd}/merci_p_1.txt')
+        os.remove(f'{wd}/merci_n_1.txt')
+        os.remove(f'{wd}/merci_p_2.txt')
+        os.remove(f'{wd}/merci_n_2.txt')
+        os.remove(f'{wd}/mutant.fasta')
         os.remove(f'{wd}/Sequence_1')
         os.remove(f'{wd}/out_len')
         os.remove(f'{wd}/out_len_mut')
@@ -958,6 +1051,7 @@ if Job == 3:
         os.remove(f'{wd}/out33')
         os.remove(f'{wd}/out2')
         os.remove(f'{wd}/out3')
+        os.remove(f'{wd}/mutant.fasta')
 
     elif Model == 3:
         print('\n======= Thanks for using Design module of HemoPI2.0. Your results will be stored in file :'f"{wd}/{result_filename}"' =====\n')
@@ -1008,8 +1102,11 @@ if Job == 3:
         df1, output_len_file = lenchk(dfseq, wd)
         
         mutants = generate_mutants_from_dataframe(df1, residues, position)
-        result_df = pd.DataFrame(mutants, columns=['Original Sequence', 'seq', 'Position'])
-        out_len_mut = pd.DataFrame(result_df['seq'])
+        result_df = pd.DataFrame(mutants, columns=['Original Sequence', 'Mutant Sequence', 'Position'])
+        out_len_mut = result_df[['Mutant Sequence']].rename(columns={'Mutant Sequence': 'seq'})
+        result_df['Seq'] = df_2
+
+        mutant_fasta = result_df[['Seq','Mutant Sequence']].to_csv(f'{wd}/mutant.fasta', index=None, header=None, sep='\n')
 
         # Load the tokenizer and model
         model_save_path = "model/"
@@ -1029,15 +1126,25 @@ if Job == 3:
 
         ###Adding merci
         merci = './merci/MERCI_motif_locator.pl'
-        motifs_p = './motif/pos_motif.txt'
-        motifs_n = './motif/neg_motif.txt'
-        os.system(f"perl {merci} -p {wd}/Sequence_1 -i {motifs_p} -o {wd}/merci_p.txt")
-        os.system(f"perl {merci} -p {wd}/Sequence_1 -i {motifs_n} -o {wd}/merci_n.txt")
-        MERCI_Processor_p(wd, 'merci_p.txt', '/merci_output_p.csv', seqid)
-        Merci_after_processing_p(wd, '/merci_output_p.csv', '/merci_hybrid_p.csv')
-        MERCI_Processor_n(wd, '/merci_n.txt', '/merci_output_n.csv', seqid)
-        Merci_after_processing_n(wd, '/merci_output_n.csv', '/merci_hybrid_n.csv')
-        hybrid(wd, df241,'/merci_output_p.csv', '/merci_output_n.csv', '/merci_hybrid_p.csv', '/merci_hybrid_n.csv', threshold, '/final_output')
+        motifs_p_1 = './motif/pos_motif_1.txt'
+        motifs_n_1 = './motif/neg_motif_1.txt'
+        motifs_p_2 = './motif/pos_motif_2.txt'
+        motifs_n_2 = './motif/neg_motif_2.txt'
+        os.system(f"perl {merci} -p {wd}/mutant.fasta -i {motifs_p_1} -o {wd}/merci_p_1.txt")
+        os.system(f"perl {merci} -p {wd}/mutant.fasta -i {motifs_n_1} -o {wd}/merci_n_1.txt")
+        os.system(f"perl {merci} -p {wd}/mutant.fasta -i {motifs_p_2} -c KOOLMAN-ROHM -o {wd}/merci_p_2.txt")
+        os.system(f"perl {merci} -p {wd}/mutant.fasta -i {motifs_n_2} -c KOOLMAN-ROHM -o {wd}/merci_n_2.txt")
+        MERCI_Processor_p(wd, 'merci_p_1.txt', '/merci_output_p_1.csv', seqid)
+        MERCI_Processor_p(wd, 'merci_p_2.txt', '/merci_output_p_2.csv', seqid)
+        Merci_after_processing_p(wd, '/merci_output_p_1.csv', '/merci_hybrid_p_1.csv')
+        Merci_after_processing_p(wd, '/merci_output_p_2.csv', '/merci_hybrid_p_2.csv')
+        MERCI_Processor_n(wd, '/merci_n_1.txt', '/merci_output_n_1.csv', seqid)
+        MERCI_Processor_n(wd, '/merci_n_2.txt', '/merci_output_n_2.csv', seqid)
+        Merci_after_processing_n(wd, '/merci_output_n_1.csv', '/merci_hybrid_n_1.csv')
+        Merci_after_processing_n(wd, '/merci_output_n_2.csv', '/merci_hybrid_n_2.csv')
+
+        hybrid(wd, df241, '/merci_hybrid_p_1.csv', '/merci_hybrid_n_1.csv', '/merci_hybrid_p_2.csv', '/merci_hybrid_n_2.csv', threshold, '/final_output')
+
         df241 = pd.read_csv(f'{wd}/final_output')
         df241.loc[df241['Hybrid Score'] > 1, 'Hybrid Score'] = 1
         df241.loc[df241['Hybrid Score'] < 0, 'Hybrid Score'] = 0
@@ -1046,15 +1153,25 @@ if Job == 3:
         df242 = df24.iloc[:, [0, 4, 5]] ######mutants
         ###Adding merci
         merci = './merci/MERCI_motif_locator.pl'
-        motifs_p = './motif/pos_motif.txt'
-        motifs_n = './motif/neg_motif.txt'
-        os.system(f"perl {merci} -p {wd}/Sequence_1 -i {motifs_p} -o {wd}/merci_p.txt")
-        os.system(f"perl {merci} -p {wd}/Sequence_1 -i {motifs_n} -o {wd}/merci_n.txt")
-        MERCI_Processor_p(wd, 'merci_p.txt', '/merci_output_p.csv', seqid)
-        Merci_after_processing_p(wd, '/merci_output_p.csv', '/merci_hybrid_p.csv')
-        MERCI_Processor_n(wd, '/merci_n.txt', '/merci_output_n.csv', seqid)
-        Merci_after_processing_n(wd, '/merci_output_n.csv', '/merci_hybrid_n.csv')
-        hybrid(wd, df242,'/merci_output_p.csv', '/merci_output_n.csv', '/merci_hybrid_p.csv', '/merci_hybrid_n.csv', threshold, '/final_output')
+        motifs_p_1 = './motif/pos_motif_1.txt'
+        motifs_n_1 = './motif/neg_motif_1.txt'
+        motifs_p_2 = './motif/pos_motif_2.txt'
+        motifs_n_2 = './motif/neg_motif_2.txt'
+        os.system(f"perl {merci} -p {wd}/mutant.fasta -i {motifs_p_1} -o {wd}/merci_p_1.txt")
+        os.system(f"perl {merci} -p {wd}/mutant.fasta -i {motifs_n_1} -o {wd}/merci_n_1.txt")
+        os.system(f"perl {merci} -p {wd}/mutant.fasta -i {motifs_p_2} -c KOOLMAN-ROHM -o {wd}/merci_p_2.txt")
+        os.system(f"perl {merci} -p {wd}/mutant.fasta -i {motifs_n_2} -c KOOLMAN-ROHM -o {wd}/merci_n_2.txt")
+        MERCI_Processor_p(wd, 'merci_p_1.txt', '/merci_output_p_1.csv', seqid)
+        MERCI_Processor_p(wd, 'merci_p_2.txt', '/merci_output_p_2.csv', seqid)
+        Merci_after_processing_p(wd, '/merci_output_p_1.csv', '/merci_hybrid_p_1.csv')
+        Merci_after_processing_p(wd, '/merci_output_p_2.csv', '/merci_hybrid_p_2.csv')
+        MERCI_Processor_n(wd, '/merci_n_1.txt', '/merci_output_n_1.csv', seqid)
+        MERCI_Processor_n(wd, '/merci_n_2.txt', '/merci_output_n_2.csv', seqid)
+        Merci_after_processing_n(wd, '/merci_output_n_1.csv', '/merci_hybrid_n_1.csv')
+        Merci_after_processing_n(wd, '/merci_output_n_2.csv', '/merci_hybrid_n_2.csv')
+
+        hybrid(wd, df242, '/merci_hybrid_p_1.csv', '/merci_hybrid_n_1.csv', '/merci_hybrid_p_2.csv', '/merci_hybrid_n_2.csv', threshold, '/final_output')
+
         df242 = pd.read_csv(f'{wd}/final_output')
         df242.loc[df242['Hybrid Score'] > 1, 'Hybrid Score'] = 1
         df242.loc[df242['Hybrid Score'] < 0, 'Hybrid Score'] = 0
@@ -1084,18 +1201,25 @@ if Job == 3:
 
         # Clean up temporary files used by Model 4
         os.remove(f'{wd}/final_output')
-        os.remove(f'{wd}/merci_hybrid_p.csv')
-        os.remove(f'{wd}/merci_hybrid_n.csv')
-        os.remove(f'{wd}/merci_output_p.csv')
-        os.remove(f'{wd}/merci_output_n.csv')
-        os.remove(f'{wd}/merci_p.txt')
-        os.remove(f'{wd}/merci_n.txt')
+        os.remove(f'{wd}/merci_hybrid_p_1.csv')
+        os.remove(f'{wd}/merci_hybrid_n_1.csv')
+        os.remove(f'{wd}/merci_output_p_1.csv')
+        os.remove(f'{wd}/merci_output_n_1.csv')
+        os.remove(f'{wd}/merci_hybrid_p_2.csv')
+        os.remove(f'{wd}/merci_hybrid_n_2.csv')
+        os.remove(f'{wd}/merci_output_p_2.csv')
+        os.remove(f'{wd}/merci_output_n_2.csv')
+        os.remove(f'{wd}/merci_p_1.txt')
+        os.remove(f'{wd}/merci_n_1.txt')
+        os.remove(f'{wd}/merci_p_2.txt')
+        os.remove(f'{wd}/merci_n_2.txt')
+        os.remove(f'{wd}/mutant.fasta')
         os.remove(f'{wd}/Sequence_1')
         os.remove(f'{wd}/out_len')
         os.remove(f'{wd}/out_m')
         os.remove(f'{wd}/out_ori')
     
-#======================###############=== Design all possibel Mutants Start from Here =========#########################=================
+#======================###############=== Design all possible Mutants Start from Here =========#########################=================
 if Job == 4:
     
     if Model == 1:  
@@ -1143,22 +1267,36 @@ if Job == 4:
         muts['Seq'].to_csv(mut_seq, index=None, header=None)
         os.system(f'python3 ./Model/composition_calculate.py {wd}/mut_seq {wd} {wd}/out2')
         mlres = ML_run(f'{wd}/out2', f'{wd}/out22', threshold)
-        
+        mutant_fasta = muts.copy()
+
+        mutant_fasta['header'] = mutant_fasta['SeqID'].astype(str).str.cat(mutant_fasta['Mutant_ID'].astype(str), sep='_')
+        mutant_fasta[['header', 'Seq']].to_csv(f'{wd}/mutant.fasta', index=None, header=None, sep='\n')
         df22 = pd.concat([muts, mlres], axis=1)
         df22.columns = ['SeqID', 'Mutant_ID', 'Seq', 'ML Score', 'Prediction']
         df22['SeqID'] = df22['SeqID'].str.replace('>','')
-        
+        df23 = df22.copy()
+        df23['SeqID'] = df22['SeqID'] + '_' + df22['Mutant_ID']
+        mut_seqid = list(df22['SeqID'] + '_' + df22['Mutant_ID'])
         ###Adding merci
         merci = './merci/MERCI_motif_locator.pl'
-        motifs_p = './motif/pos_motif.txt'
-        motifs_n = './motif/neg_motif.txt'
-        os.system(f"perl {merci} -p {wd}/Sequence_1 -i {motifs_p} -o {wd}/merci_p.txt")
-        os.system(f"perl {merci} -p {wd}/Sequence_1 -i {motifs_n} -o {wd}/merci_n.txt")
-        MERCI_Processor_p(wd, 'merci_p.txt', '/merci_output_p.csv', seqid)
-        Merci_after_processing_p(wd, '/merci_output_p.csv', '/merci_hybrid_p.csv')
-        MERCI_Processor_n(wd, '/merci_n.txt', '/merci_output_n.csv', seqid)
-        Merci_after_processing_n(wd, '/merci_output_n.csv', '/merci_hybrid_n.csv')
-        hybrid(wd, df22,'/merci_output_p.csv', '/merci_output_n.csv', '/merci_hybrid_p.csv', '/merci_hybrid_n.csv', threshold, '/final_output')
+        motifs_p_1 = './motif/pos_motif_1.txt'
+        motifs_n_1 = './motif/neg_motif_1.txt'
+        motifs_p_2 = './motif/pos_motif_2.txt'
+        motifs_n_2 = './motif/neg_motif_2.txt'
+        os.system(f"perl {merci} -p {wd}/mutant.fasta -i {motifs_p_1} -o {wd}/merci_p_1.txt")
+        os.system(f"perl {merci} -p {wd}/mutant.fasta -i {motifs_n_1} -o {wd}/merci_n_1.txt")
+        os.system(f"perl {merci} -p {wd}/mutant.fasta -i {motifs_p_2} -c KOOLMAN-ROHM -o {wd}/merci_p_2.txt")
+        os.system(f"perl {merci} -p {wd}/mutant.fasta -i {motifs_n_2} -c KOOLMAN-ROHM -o {wd}/merci_n_2.txt")
+        MERCI_Processor_p(wd, 'merci_p_1.txt', '/merci_output_p_1.csv', mut_seqid)
+        MERCI_Processor_p(wd, 'merci_p_2.txt', '/merci_output_p_2.csv', mut_seqid)
+        Merci_after_processing_p(wd, '/merci_output_p_1.csv', '/merci_hybrid_p_1.csv')
+        Merci_after_processing_p(wd, '/merci_output_p_2.csv', '/merci_hybrid_p_2.csv')
+        MERCI_Processor_n(wd, '/merci_n_1.txt', '/merci_output_n_1.csv', mut_seqid)
+        MERCI_Processor_n(wd, '/merci_n_2.txt', '/merci_output_n_2.csv', mut_seqid)
+        Merci_after_processing_n(wd, '/merci_output_n_1.csv', '/merci_hybrid_n_1.csv')
+        Merci_after_processing_n(wd, '/merci_output_n_2.csv', '/merci_hybrid_n_2.csv')
+
+        hybrid(wd, df23, '/merci_hybrid_p_1.csv', '/merci_hybrid_n_1.csv', '/merci_hybrid_p_2.csv', '/merci_hybrid_n_2.csv', threshold, '/final_output')
         df222 = pd.read_csv(f'{wd}/final_output')
         df222.loc[df222['Hybrid Score'] > 1, 'Hybrid Score'] = 1
         df222.loc[df222['Hybrid Score'] < 0, 'Hybrid Score'] = 0
@@ -1176,12 +1314,19 @@ if Job == 4:
 
         # Clean up temporary files used by Model 2
         os.remove(f'{wd}/final_output')
-        os.remove(f'{wd}/merci_hybrid_p.csv')
-        os.remove(f'{wd}/merci_hybrid_n.csv')
-        os.remove(f'{wd}/merci_output_p.csv')
-        os.remove(f'{wd}/merci_output_n.csv')
-        os.remove(f'{wd}/merci_p.txt')
-        os.remove(f'{wd}/merci_n.txt')
+        os.remove(f'{wd}/merci_hybrid_p_1.csv')
+        os.remove(f'{wd}/merci_hybrid_n_1.csv')
+        os.remove(f'{wd}/merci_output_p_1.csv')
+        os.remove(f'{wd}/merci_output_n_1.csv')
+        os.remove(f'{wd}/merci_hybrid_p_2.csv')
+        os.remove(f'{wd}/merci_hybrid_n_2.csv')
+        os.remove(f'{wd}/merci_output_p_2.csv')
+        os.remove(f'{wd}/merci_output_n_2.csv')
+        os.remove(f'{wd}/merci_p_1.txt')
+        os.remove(f'{wd}/merci_n_1.txt')
+        os.remove(f'{wd}/merci_p_2.txt')
+        os.remove(f'{wd}/merci_n_2.txt')
+        os.remove(f'{wd}/mutant.fasta')
         os.remove(f'{wd}/Sequence_1')
         os.remove(f'{wd}/out_len')
         os.remove(f'{wd}/out22')
@@ -1237,7 +1382,11 @@ if Job == 4:
         mut_seq = pd.DataFrame(muts['Seq'])
         mut_seq.columns = ['seq']
         df_2 = pd.DataFrame(muts.iloc[:, 1])
-        df_2.columns = ['SeqID'] 
+        df_2.columns = ['SeqID']
+        mutant_fasta = muts.copy()
+
+        mutant_fasta['header'] = mutant_fasta['SeqID'].astype(str).str.cat(mutant_fasta['Mutant_ID'].astype(str), sep='_')
+        mutant_fasta[['header', 'Seq']].to_csv(f'{wd}/mutant.fasta', index=None, header=None, sep='\n') 
         # Load the tokenizer and model
         model_save_path = "model/"
         tokenizer = AutoTokenizer.from_pretrained(model_save_path)
@@ -1246,17 +1395,30 @@ if Job == 4:
         run_esm_model(mut_seq, df_2, f"{wd}/out_ori", threshold)
         out_ori = pd.read_csv(f"{wd}/out_ori")
         df23 = pd.concat([muts, out_ori.iloc[:, -2:]], axis=1)
+        df24 = df23.copy()
+        df24['SeqID'] = df23['SeqID'] + '_' + df23['Mutant_ID']
+        mut_seqid = list(df23['SeqID'] + '_' + df23['Mutant_ID'])
+
         ###Adding merci
         merci = './merci/MERCI_motif_locator.pl'
-        motifs_p = './motif/pos_motif.txt'
-        motifs_n = './motif/neg_motif.txt'
-        os.system(f"perl {merci} -p {wd}/Sequence_1 -i {motifs_p} -o {wd}/merci_p.txt")
-        os.system(f"perl {merci} -p {wd}/Sequence_1 -i {motifs_n} -o {wd}/merci_n.txt")
-        MERCI_Processor_p(wd, 'merci_p.txt', '/merci_output_p.csv', seqid)
-        Merci_after_processing_p(wd, '/merci_output_p.csv', '/merci_hybrid_p.csv')
-        MERCI_Processor_n(wd, '/merci_n.txt', '/merci_output_n.csv', seqid)
-        Merci_after_processing_n(wd, '/merci_output_n.csv', '/merci_hybrid_n.csv')
-        hybrid(wd, df23,'/merci_output_p.csv', '/merci_output_n.csv', '/merci_hybrid_p.csv', '/merci_hybrid_n.csv', threshold, '/final_output')
+        motifs_p_1 = './motif/pos_motif_1.txt'
+        motifs_n_1 = './motif/neg_motif_1.txt'
+        motifs_p_2 = './motif/pos_motif_2.txt'
+        motifs_n_2 = './motif/neg_motif_2.txt'
+        os.system(f"perl {merci} -p {wd}/mutant.fasta -i {motifs_p_1} -o {wd}/merci_p_1.txt")
+        os.system(f"perl {merci} -p {wd}/mutant.fasta -i {motifs_n_1} -o {wd}/merci_n_1.txt")
+        os.system(f"perl {merci} -p {wd}/mutant.fasta -i {motifs_p_2} -c KOOLMAN-ROHM -o {wd}/merci_p_2.txt")
+        os.system(f"perl {merci} -p {wd}/mutant.fasta -i {motifs_n_2} -c KOOLMAN-ROHM -o {wd}/merci_n_2.txt")
+        MERCI_Processor_p(wd, 'merci_p_1.txt', '/merci_output_p_1.csv', mut_seqid)
+        MERCI_Processor_p(wd, 'merci_p_2.txt', '/merci_output_p_2.csv', mut_seqid)
+        Merci_after_processing_p(wd, '/merci_output_p_1.csv', '/merci_hybrid_p_1.csv')
+        Merci_after_processing_p(wd, '/merci_output_p_2.csv', '/merci_hybrid_p_2.csv')
+        MERCI_Processor_n(wd, '/merci_n_1.txt', '/merci_output_n_1.csv', mut_seqid)
+        MERCI_Processor_n(wd, '/merci_n_2.txt', '/merci_output_n_2.csv', mut_seqid)
+        Merci_after_processing_n(wd, '/merci_output_n_1.csv', '/merci_hybrid_n_1.csv')
+        Merci_after_processing_n(wd, '/merci_output_n_2.csv', '/merci_hybrid_n_2.csv')
+
+        hybrid(wd, df24, '/merci_hybrid_p_1.csv', '/merci_hybrid_n_1.csv', '/merci_hybrid_p_2.csv', '/merci_hybrid_n_2.csv', threshold, '/final_output')
         df241 = pd.read_csv(f'{wd}/final_output')
         df241.loc[df241['Hybrid Score'] > 1, 'Hybrid Score'] = 1
         df241.loc[df241['Hybrid Score'] < 0, 'Hybrid Score'] = 0
@@ -1273,12 +1435,19 @@ if Job == 4:
 
         # Clean up temporary files used by Model 4
         os.remove(f'{wd}/final_output')
-        os.remove(f'{wd}/merci_hybrid_p.csv')
-        os.remove(f'{wd}/merci_hybrid_n.csv')
-        os.remove(f'{wd}/merci_output_p.csv')
-        os.remove(f'{wd}/merci_output_n.csv')
-        os.remove(f'{wd}/merci_p.txt')
-        os.remove(f'{wd}/merci_n.txt')
+        os.remove(f'{wd}/merci_hybrid_p_1.csv')
+        os.remove(f'{wd}/merci_hybrid_n_1.csv')
+        os.remove(f'{wd}/merci_output_p_1.csv')
+        os.remove(f'{wd}/merci_output_n_1.csv')
+        os.remove(f'{wd}/merci_hybrid_p_2.csv')
+        os.remove(f'{wd}/merci_hybrid_n_2.csv')
+        os.remove(f'{wd}/merci_output_p_2.csv')
+        os.remove(f'{wd}/merci_output_n_2.csv')
+        os.remove(f'{wd}/merci_p_1.txt')
+        os.remove(f'{wd}/merci_n_1.txt')
+        os.remove(f'{wd}/merci_p_2.txt')
+        os.remove(f'{wd}/merci_n_2.txt')
+        os.remove(f'{wd}/mutant.fasta')
         os.remove(f'{wd}/Sequence_1')
         os.remove(f'{wd}/out_len')
         os.remove(f'{wd}/muts.csv')
@@ -1294,8 +1463,8 @@ if Job == 5:
     df_2, dfseq = readseq(Sequence)
     df1, output_len_file = lenchk(dfseq, wd)
     merci = './merci/MERCI_motif_locator.pl'
-    motifs_p = './motif/pos_motif.txt'
-    motifs_n = './motif/neg_motif.txt'
+    motifs_p = './motif/all_pos.txt'
+    motifs_n = './motif/all_neg.txt'
 
     os.system(f"perl {merci} -p {wd}/Sequence_1 -i {motifs_p} -o {wd}/merci_p.txt")
     os.system(f"perl {merci} -p {wd}/Sequence_1 -i {motifs_n} -o {wd}/merci_n.txt")
@@ -1319,11 +1488,11 @@ if Job == 5:
     # Define the function to determine the prediction based on PHits and NHits
     def determine_prediction(row):
         if row['PHits'] == 0 and row['NHits'] == 0:
-            return 'Non-Haemolytic'
+            return 'Non-Hemolytic'
         elif row['PHits'] > row['NHits']:
-            return 'Haemolytic'
+            return 'Hemolytic'
         elif row['PHits'] < row['NHits']:
-            return 'Non-Haemolytic'
+            return 'Non-Hemolytic'
         elif row['PHits'] == row['NHits']:
             return 'Hemolytic'
         else:
@@ -1355,10 +1524,6 @@ if Job == 5:
     os.remove(f'{wd}/out_len')
 
     
-    
-
-    
-    
 print("\n=========Process Completed. Have an awesome day ahead.=============\n")
-print('\n======= Thanks for using HemoPI2.0. Your results are stored in file :'f"{wd}/{result_filename}"' =====\n\n')
+print('\n======= Thanks for using HemoPI2.0. Your results are stored in file :'f"{wd}{result_filename}"' =====\n\n')
 print('Please cite: HemoPI2.0\n')
