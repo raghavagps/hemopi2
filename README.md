@@ -1,7 +1,7 @@
-# HemoPI2.0
+# HemoPI2
 A method for predicting hemolytic activity of the peptides
 # Introduction
-HemoPI2.0 is developed for identification (Classification) as well as quantification (regression) methods for predicting hemolytic activity peptides with their hemolytic concentration (HC50 value), especially targets for mammalian red blood cells (RBCs). It uses various composition based features for predicting hemolytic activity peptides. The final model also deploys a motif-based module which has been implemented using MERCI. More information on HemoPI2.0 is available from its web server http://webs.iiitd.edu.in/raghava/hemopi2. Please read/cite the content about HemoPI2.0 for complete information including algorithm behind the approach.
+HemoPI2 is developed for identification (Classification) as well as quantification (regression) methods for predicting hemolytic activity peptides with their hemolytic concentration (HC50 value), especially targets for mammalian red blood cells (RBCs). It uses various composition based features for predicting hemolytic activity peptides. The final model also deploys a motif-based module which has been implemented using MERCI. More information on HemoPI2.0 is available from its web server http://webs.iiitd.edu.in/raghava/hemopi2. Please read/cite the content about HemoPI2 for complete information including algorithm behind the approach.
 
 ## PIP Installation
 PIP version is also available for easy installation and usage of this tool. The following command is required to install the package 
@@ -16,7 +16,7 @@ hemopi2_classification.py -h
 
 # Standalone
 
-Standalone version of HemoPI2.0 is written in python3 and the following libraries are necessary for a successful run:
+Standalone version of HemoPI2 is written in python3 and the following libraries are necessary for a successful run:
 
 - scikit-learn
 ```
