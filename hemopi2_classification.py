@@ -460,9 +460,9 @@ else:
 # Threshold
 if args.threshold is None:
     if Model in [1, 2]:
-        threshold = 0.46
+        threshold = 0.45
     elif Model in [3, 4]:
-        threshold = 0.55
+        threshold = 0.58
 else:
     threshold = args.threshold
 
