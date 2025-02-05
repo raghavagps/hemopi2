@@ -3,7 +3,7 @@ A method for predicting hemolytic activity of the peptides
 # Introduction
 HemoPI2 is developed for identification (Classification) as well as quantification (regression) methods for predicting hemolytic activity peptides with their hemolytic concentration (HC50 value), especially targets for mammalian red blood cells (RBCs). It uses various composition based features for predicting hemolytic activity peptides. The final model also deploys a motif-based module which has been implemented using MERCI. More information on HemoPI2.0 is available from its web server http://webs.iiitd.edu.in/raghava/hemopi2. Please read/cite the content about HemoPI2 for complete information including algorithm behind the approach.
 ## Reference
-Reference: Rathore, A.S., Kumar, N., Choudhury, S. et al. Prediction of hemolytic peptides and their hemolytic concentration. Commun Biol 8, 176 (2025). https://doi.org/10.1038/s42003-025-07615-w
+Rathore et al. Prediction of hemolytic peptides and their hemolytic concentration. Commun Biol 8, 176 (2025). https://doi.org/10.1038/s42003-025-07615-w
 
 ## PIP Installation
 PIP version is also available for easy installation and usage of this tool. The following command is required to install the package 
